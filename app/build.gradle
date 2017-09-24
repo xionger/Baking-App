@@ -20,6 +20,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "int", "LIMIT", "100"
+        buildConfigField "String", "BASEURL", "\"https://d17h27t6h515a5.cloudfront.net/\""
+        buildConfigField "int", "CACHETIME", "432000" // 5days
+
     }
     buildTypes {
         release {
