@@ -1,4 +1,4 @@
-package com.xiongxh.bakingapp.networks;
+package com.xiongxh.bakingapp.utilities;
 
 
 import android.text.TextUtils;
@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-import retrofit2.Retrofit;
 import retrofit2.Response;
 import retrofit2.adapter.rxjava2.HttpException;
 

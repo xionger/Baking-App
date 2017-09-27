@@ -1,11 +1,16 @@
 package com.xiongxh.bakingapp.mvp.models;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.Serializable;
 
 public class Ingredient implements Serializable {
 
+    @Expose
     private double quantity;
+    @Expose
     private String measure;
+    @Expose
     private String ingredient;
 
     public Ingredient(){}

@@ -1,13 +1,20 @@
 package com.xiongxh.bakingapp.mvp.models;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.Serializable;
 
 public class Step implements Serializable {
 
+    @Expose
     private int id;
+    @Expose
     private String description;
+    @Expose
     private String shortdescription;
+    @Expose
     private String videoURL;
+    @Expose
     private String thumbnailURL;
 
     public Step(){}

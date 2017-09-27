@@ -1,15 +1,23 @@
 package com.xiongxh.bakingapp.mvp.models;
 
+import com.google.gson.annotations.Expose;
+
 import java.io.Serializable;
 import java.util.List;
 
 public class Recipe implements Serializable {
 
+    @Expose
     private int id;
+    @Expose
     private String name;
+    @Expose
     private String image;
+    @Expose
     private int servings;
+    @Expose
     private List<Ingredient> ingredients;
+    @Expose
     private List<Step> steps;
 
     public Recipe(){}
