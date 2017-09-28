@@ -5,7 +5,6 @@ import android.app.Activity;
 
 import com.xiongxh.bakingapp.di.module.RecipeModule;
 import com.xiongxh.bakingapp.di.scope.PerActivity;
-import com.xiongxh.bakingapp.modules.home.MainActivity;
 import com.xiongxh.bakingapp.modules.home.RecipeListActivity;
 
 import dagger.Component;

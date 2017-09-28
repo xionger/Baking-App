@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
-import com.xiongxh.bakingapp.application.RecipeApp;
+import com.xiongxh.bakingapp.application.RecipeApplication;
 import com.xiongxh.bakingapp.di.component.ApplicationComponent;
 
 import butterknife.ButterKnife;
@@ -65,7 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected ApplicationComponent getApplicationComponent() {
-        return ((RecipeApp) getApplication()).getApplicationComponent();
+        return ((RecipeApplication) getApplication()).getApplicationComponent();
     }
 
     protected abstract int getContentView();

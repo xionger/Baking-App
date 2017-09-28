@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.List;
 
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder>{
+    private final String LOG_TAG = RecipeAdapter.class.getSimpleName();
     private List<Recipe> mRecipes;
 
     private Recipe mRecipe;
@@ -26,28 +28,32 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
     @Override
     public RecipeAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Log.d(LOG_TAG, "Entering onCreateViewHolder()...");
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_recipe, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        Log.d(LOG_TAG, "Entering onBindViewHolder()...");
         Recipe recipe = mRecipes.get(position);
         holder.setRecipe(recipe);
     }
 
     @Override
     public int getItemCount() {
+        Log.d(LOG_TAG, "Entering getItemCount()...");
         return mRecipes.size();
     }
 
     public void setRecipes(List<Recipe> recipes){
+        Log.d(LOG_TAG, "Entering setRecipes()...");
         this.mRecipes = recipes;
         notifyDataSetChanged();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-
+        private final String LOG_TAG = ViewHolder.class.getCanonicalName();
         TextView mServingsView, mStepsCountView, mNameView;
         RecyclerView mIngredientsView;
 
@@ -55,6 +61,7 @@ public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.ViewHolder
 
         public ViewHolder (View itemView){
             super(itemView);
+            Log.d(LOG_TAG, "Entering ViewHolder constructor...");
             itemView.setOnClickListener(this);
 
             mServingsView = (TextView) itemView.findViewById(R.id.tv_count_servings);
