@@ -9,7 +9,7 @@ import javax.inject.Singleton;
 import dagger.Component;
 import retrofit2.Retrofit;
 
-
+//TODO: deleted
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {

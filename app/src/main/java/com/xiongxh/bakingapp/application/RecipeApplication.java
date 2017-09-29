@@ -7,6 +7,7 @@ import com.xiongxh.bakingapp.di.component.ApplicationComponent;
 import com.xiongxh.bakingapp.di.component.DaggerApplicationComponent;
 import com.xiongxh.bakingapp.di.module.ApplicationModule;
 
+//TODO: deleted
 public class RecipeApplication extends Application {
     private ApplicationComponent mApplicationComponent;
 

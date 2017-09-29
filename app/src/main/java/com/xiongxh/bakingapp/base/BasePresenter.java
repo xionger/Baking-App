@@ -12,20 +12,9 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
 
 
-public class BasePresenter<V extends BaseView> {
+public interface BasePresenter {
+    void subscribe();
+    void unsubscribe();
 
-    @Inject
-    protected V mView;
-
-    protected V getView() {
-        return mView;
-    }
-
-    protected <T> void subscribe(Observable<T> observable, Observer<T> observer){
-        observable.subscribeOn(Schedulers.newThread())
-                //.toSingle()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(observer);
-    }
 }
 

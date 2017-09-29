@@ -13,6 +13,4 @@ public interface RecipeApiService {
     @GET("topher/2017/May/59121517_baking/baking.json")
     Observable<List<Recipe>> getRecipeList();
 
-    @GET("topher/2017/May/59121517_baking/baking.json")
-    Call<List<Recipe>> getTheRecipeList();
 }

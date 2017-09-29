@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import retrofit2.Call;
 
+//TODO: delete
 public interface RemoteRecipeResponse<T> {
     void onRequestStart(Call<T> call);
 
