@@ -1,6 +1,5 @@
 package com.xiongxh.bakingapp.modules.home.adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -12,8 +11,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.xiongxh.bakingapp.R;
+import com.xiongxh.bakingapp.adapters.IngredientAdapter;
 import com.xiongxh.bakingapp.modules.details.RecipeDetailActivity;
-import com.xiongxh.bakingapp.mvp.models.Recipe;
+import com.xiongxh.bakingapp.models.Recipe;
 
 import java.util.List;
 

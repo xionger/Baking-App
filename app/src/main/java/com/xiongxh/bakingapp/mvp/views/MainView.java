@@ -1,7 +1,7 @@
 package com.xiongxh.bakingapp.mvp.views;
 
 import com.xiongxh.bakingapp.base.BaseView;
-import com.xiongxh.bakingapp.mvp.models.Recipe;
+import com.xiongxh.bakingapp.models.Recipe;
 
 import java.util.List;
 

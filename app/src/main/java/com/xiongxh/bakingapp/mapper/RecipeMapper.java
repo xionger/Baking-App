@@ -1,8 +1,7 @@
 package com.xiongxh.bakingapp.mapper;
 
-import com.xiongxh.bakingapp.mvp.models.Recipe;
+import com.xiongxh.bakingapp.models.Recipe;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;

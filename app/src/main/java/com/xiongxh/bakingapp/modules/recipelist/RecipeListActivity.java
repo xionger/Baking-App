@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.xiongxh.bakingapp.R;
-import com.xiongxh.bakingapp.di.module.RecipeListModule;
-import com.xiongxh.bakingapp.di.module.RecipeModule;
+
+import com.xiongxh.bakingapp.application.BakingApp;
 import com.xiongxh.bakingapp.mvp.presenter.RecipeListPresenter;
 
 import javax.inject.Inject;
@@ -31,9 +31,6 @@ public class RecipeListActivity extends AppCompatActivity {
             FragmentUtils.addFragment(getSupportFragmentManager(), recipeListFragment, R.id.recipeListFragmentContainer);
         }
 
-        DaggerRecipeListComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .recipeModule(new RecipeListModule(this))
-                .build().inject(this);
+        ((BakingApp) getApplication()).getAppcomponent().inject(this);
     }
 }

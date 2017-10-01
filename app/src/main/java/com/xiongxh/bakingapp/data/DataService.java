@@ -1,9 +1,9 @@
 package com.xiongxh.bakingapp.data;
 
 
-import com.xiongxh.bakingapp.mvp.models.Ingredient;
-import com.xiongxh.bakingapp.mvp.models.Recipe;
-import com.xiongxh.bakingapp.mvp.models.Step;
+import com.xiongxh.bakingapp.models.Ingredient;
+import com.xiongxh.bakingapp.models.Recipe;
+import com.xiongxh.bakingapp.models.Step;
 
 import java.util.List;
 

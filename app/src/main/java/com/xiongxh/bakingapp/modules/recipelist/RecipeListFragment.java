@@ -2,7 +2,7 @@ package com.xiongxh.bakingapp.modules.recipelist;
 
 import android.support.v4.app.Fragment;
 
-import com.xiongxh.bakingapp.mvp.models.Recipe;
+import com.xiongxh.bakingapp.models.Recipe;
 import com.xiongxh.bakingapp.mvp.views.RecipeListViewContract;
 
 import java.util.List;
