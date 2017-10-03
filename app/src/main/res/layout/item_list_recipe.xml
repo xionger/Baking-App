@@ -20,7 +20,7 @@
 
 
         <ImageView
-            android:src="@drawable/pizza"
+
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/image"
@@ -41,7 +41,7 @@
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
-            android:text="@string/servings"
+
             android:id="@+id/tv_servings"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
             app:layout_constraintHorizontal_bias="0.0"/>
 
         <TextView
-            android:text="@string/steps"
+
             android:id="@+id/tv_steps"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
