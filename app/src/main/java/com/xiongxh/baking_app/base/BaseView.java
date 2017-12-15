@@ -1,5 +1,5 @@
 package com.xiongxh.baking_app.base;
 
-public interface BaseView<T> {
-    void setPresenter(T presenter);
+public interface BaseView<P> {
+    void setPresenter(P presenter);
 }

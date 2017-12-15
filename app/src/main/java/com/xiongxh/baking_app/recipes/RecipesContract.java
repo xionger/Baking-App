@@ -2,20 +2,31 @@ package com.xiongxh.baking_app.recipes;
 
 import com.xiongxh.baking_app.base.BasePresenter;
 import com.xiongxh.baking_app.base.BaseView;
-import com.xiongxh.baking_app.data.models.Recipe;
+import com.xiongxh.baking_app.data.bean.Recipe;
 
 import java.util.List;
 
 public interface RecipesContract {
     interface View extends BaseView<Presenter> {
         void showRecipeList(List<Recipe> recipeList);
-        void showRecipeDetails(int recipeId);
         void showLoadingIndicator(boolean show);
-        void showError();
+        void showLoadingRecipesErrorMessage(String errorMessage);
+        void showLoadingRecipesCompletedMessage();
+        void showRecipeDetails(long recipeId);
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter extends BasePresenter<View> {
+        //void loadRecipesFromRepository(boolean forceUpdate, RecipesIdlingResource resource);
+        void loadRecipes();
+        void openRecipeDetails(long recipeId);
 
+        void syncData();
+
+        //ArrayList<Recipe> getLoadRecipes();
+
+        //void setFavoriteRecipe(Recipe recipe, int postion);
+
+        //Recipe getRecipeById(long id);
     }
 }
 

@@ -1,14 +1,28 @@
 package com.xiongxh.baking_app.api;
 
-import com.xiongxh.baking_app.data.models.Recipe;
+import com.xiongxh.baking_app.BuildConfig;
 
-import java.util.List;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-import retrofit2.http.GET;
-import io.reactivex.Observable;
 
+public class RecipeApiService {
+    private static Retrofit retrofit;
 
-public interface RecipeApiService {
-    @GET("topher/2017/May/59121517_baking/baking.json")
-    Observable<List<Recipe>> getRecipes();
+    public static void initRetrofit(OkHttpClient client){
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BuildConfig.BASEURL)
+                .client(client)
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+    }
+
+    public static ApiService initService(){
+        ApiService apiService = retrofit.create(ApiService.class);
+
+        return apiService;
+    }
 }

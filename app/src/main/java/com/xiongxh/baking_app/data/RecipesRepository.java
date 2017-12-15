@@ -1,52 +1,52 @@
 package com.xiongxh.baking_app.data;
 
-import com.xiongxh.baking_app.data.models.Ingredient;
-import com.xiongxh.baking_app.data.models.Recipe;
-import com.xiongxh.baking_app.data.models.Step;
-import com.xiongxh.baking_app.data.remote.Remote;
+import com.xiongxh.baking_app.BakingApp;
+import com.xiongxh.baking_app.data.bean.Ingredient;
+import com.xiongxh.baking_app.data.bean.Recipe;
+import com.xiongxh.baking_app.data.bean.Step;
+import com.xiongxh.baking_app.data.local.RecipesLocalDataSource;
+import com.xiongxh.baking_app.data.remote.RecipesRemoteDataSource;
 
 import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-
 import io.reactivex.Observable;
+import io.reactivex.Single;
 
-@Singleton
-public class RecipesRepository implements DataService {
+public class RecipesRepository implements RecipesDataSource {
 
-    private final DataService mRemoteRecipesDataService;
+    private RecipesLocalDataSource mRecipesLocalDataSource;
+    private RecipesRemoteDataSource mRecipesRemoteDataSource;
 
+    public RecipesRepository(RecipesLocalDataSource localDataSource, RecipesRemoteDataSource remoteDataSource){
+        this.mRecipesLocalDataSource = localDataSource;
+        this.mRecipesRemoteDataSource = remoteDataSource;
+    }
 
-    @Inject
-    public RecipesRepository(@Remote DataService remoteRecipesService){
-        this.mRemoteRecipesDataService = remoteRecipesService;
-
-
+    public boolean isSynced(){
+        return BakingApp.get().recipePreferences.isRecipesSynced();
     }
 
     @Override
-    public Observable<List<Recipe>> getRecipes() {
+    public Single<List<Recipe>> getRecipes() {
         return null;
     }
 
     @Override
-    public Observable<List<Ingredient>> getIngredientsById(int recipeId) {
+    public Single<Recipe> getRecipe(int recipeId) {
         return null;
     }
 
     @Override
-    public Observable<List<Ingredient>> getIngredientsByName(String recipeName) {
+    public Single<List<Ingredient>> getIngredientsOfRecipe(int recipeId) {
         return null;
     }
 
     @Override
-    public Observable<List<Step>> getSteps(int recipeId) {
+    public Single<List<Step>> getStepsOfRecipe(int recipeId) {
         return null;
     }
 
     @Override
-    public void saveRecipes(List<Recipe> recipes) {
+    public void setRecipes(List<Recipe> recipes) {
 
     }
 }

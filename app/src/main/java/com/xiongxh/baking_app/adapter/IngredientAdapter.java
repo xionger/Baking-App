@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.xiongxh.baking_app.R;
-import com.xiongxh.baking_app.data.models.Ingredient;
+import com.xiongxh.baking_app.data.bean.Ingredient;
 
 import java.util.List;
 
