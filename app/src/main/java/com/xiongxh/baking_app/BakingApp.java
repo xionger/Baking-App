@@ -44,15 +44,14 @@ public class BakingApp extends Application{
         client = new OkHttpClient.Builder().addInterceptor(new StethoInterceptor()).build();
         RecipeApiService.initRetrofit(client);
 
-        /*
         database = Room.databaseBuilder(this,
                 RecipesDatabase.class,
                 RecipesDbContract.DATABASE_NAME)
                 .build();
 
         recipePreferences = new RecipePreferences(this);
-        presenterProvider = new PresenterProvider();
-        */
+
+        //presenterProvider = new PresenterProvider();
     }
 
 }

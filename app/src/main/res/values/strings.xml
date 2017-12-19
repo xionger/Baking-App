@@ -3,4 +3,5 @@
     <string name="action_refresh">Refresh Recipes</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
+    <string name="servings">Servings</string>
 </resources>

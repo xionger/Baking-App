@@ -6,6 +6,8 @@ import com.xiongxh.baking_app.BakingApp;
 import com.xiongxh.baking_app.data.Interactor.RecipesInteractor;
 import com.xiongxh.baking_app.data.RecipesRepository;
 import com.xiongxh.baking_app.data.bean.Recipe;
+import com.xiongxh.baking_app.data.local.RecipesLocalDataSource;
+import com.xiongxh.baking_app.data.remote.RecipesRemoteDataSource;
 
 import java.util.List;
 
@@ -19,13 +21,25 @@ import static com.google.common.base.Preconditions.checkNotNull;
 public class RecipesPresenter implements RecipesContract.Presenter{
 
     private RecipesContract.View mRecipesView;
+    private RecipesRepository mRecipesRepository;
 
     private RecipesInteractor mRecipesInteractor;
 
     private CompositeDisposable mDisposableRecipes = new CompositeDisposable();
-
+    /*
     public RecipesPresenter(){
         mRecipesInteractor = new RecipesInteractor();
+    }
+    */
+
+    public RecipesPresenter(RecipesContract.View view){
+        //RecipesLocalDataSource localDataSource = new RecipesLocalDataSource();
+        //RecipesRemoteDataSource remoteDataSource = new RecipesRemoteDataSource();
+
+        //mRecipesRepository = new RecipesRepository(localDataSource, remoteDataSource);
+        mRecipesInteractor = new RecipesInteractor();
+
+        mRecipesView = view;
     }
 
     @Override
@@ -68,14 +82,14 @@ public class RecipesPresenter implements RecipesContract.Presenter{
                 .getRecipes()
                 .subscribeWith(new DisposableSingleObserver<List<Recipe>>() {
                     @Override
-                    public void onSuccess(List<Recipe> recipes) {
+                    public void onSuccess(@NonNull List<Recipe> recipes) {
                         mRecipesView.showLoadingIndicator(false);
                         mRecipesView.showRecipeList(recipes);
                         mRecipesView.showLoadingRecipesCompletedMessage();
                     }
 
                     @Override
-                    public void onError(Throwable e) {
+                    public void onError(@NonNull Throwable e) {
                         Timber.e(e);
                         mRecipesView.showLoadingIndicator(false);
                         mRecipesView.showLoadingRecipesErrorMessage(e.getMessage());
@@ -85,11 +99,13 @@ public class RecipesPresenter implements RecipesContract.Presenter{
         mDisposableRecipes.add(disposableRecipe);
     }
 
+    /*
     @Override
     public void syncData(){
         BakingApp.get().recipePreferences.setRecipesSynced(false);
         loadRecipes();
     }
+    */
     /*
     @Override
     public void loadRecipes(boolean forceUpdate) {

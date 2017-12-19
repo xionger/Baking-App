@@ -9,6 +9,6 @@ import io.reactivex.Single;
 import retrofit2.http.GET;
 
 public interface ApiService {
-    @GET("topher/2017/May/59121517_baking/baking.json")
+    @GET("baking.json")
     Single<List<Recipe>> fetchRecipesFromServer();
 }

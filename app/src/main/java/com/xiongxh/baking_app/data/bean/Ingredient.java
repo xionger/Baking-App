@@ -17,6 +17,7 @@ import org.parceler.Parcel;
                 childColumns = "recipeId",
                 onDelete = ForeignKey.CASCADE),
         indices = @Index("recipeId"))
+
 @Parcel(Parcel.Serialization.BEAN)
 public class Ingredient {
 
@@ -27,9 +28,11 @@ public class Ingredient {
     @SerializedName("quantity")
     @Expose
     private Double quantity;
+
     @SerializedName("measure")
     @Expose
     private String measure;
+
     @SerializedName("ingredient")
     @Expose
     private String ingredient;

@@ -48,6 +48,8 @@ public class RecipesActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_list_recipe);
 
+        ButterKnife.bind(this);
+
         /*
         mRecipesFragment = (RecipesContract.View) getSupportFragmentManager().findFragmentById(R.id.recipes_fragment_container);
 
@@ -58,7 +60,7 @@ public class RecipesActivity extends AppCompatActivity {
 
         mRecipesPresenter = BakingApp.get().presenterProvider.recipesProvider();
         */
-        //ButterKnife.bind(this);
+
         /*
         setSupportActionBar(mToolbar);
 
@@ -68,23 +70,24 @@ public class RecipesActivity extends AppCompatActivity {
 
         mDrawerLayout.addDrawerListener(toggle);
 */
-        /*
-        if (savedInstanceState == null){
+
+        //if (savedInstanceState == null){
             mRecipesFragment = RecipesFragment.newInstance();
 
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.recipes_fragment_container, (Fragment)mRecipesFragment, TAG_FRAGMENT_RECIPES)
                     .commit();
-        }
+        //}
 
-        if (mRecipesFragment == null){
-            mRecipesFragment = (RecipesContract.View) getSupportFragmentManager()
-                    .findFragmentByTag(TAG_FRAGMENT_RECIPES);
-        }
+        //if (mRecipesFragment == null){
+        //    mRecipesFragment = (RecipesContract.View) getSupportFragmentManager()
+        //            .findFragmentByTag(TAG_FRAGMENT_RECIPES);
+        //}
 
-        mRecipesPresenter = BakingApp.get().presenterProvider.recipesProvider();
-        */
+        //mRecipesPresenter = BakingApp.get().presenterProvider.recipesProvider();
+
+        //mRecipesFragment.setPresenter(mRecipesPresenter);
 
     }
 

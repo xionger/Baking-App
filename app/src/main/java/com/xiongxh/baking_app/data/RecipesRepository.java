@@ -6,6 +6,7 @@ import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
 import com.xiongxh.baking_app.data.local.RecipesLocalDataSource;
 import com.xiongxh.baking_app.data.remote.RecipesRemoteDataSource;
+import com.xiongxh.baking_app.rx.RxScheduler;
 
 import java.util.List;
 import io.reactivex.Observable;
@@ -27,7 +28,8 @@ public class RecipesRepository implements RecipesDataSource {
 
     @Override
     public Single<List<Recipe>> getRecipes() {
-        return null;
+
+        return mRecipesRemoteDataSource.getRecipes().compose(RxScheduler.applySchedulersSingle());
     }
 
     @Override

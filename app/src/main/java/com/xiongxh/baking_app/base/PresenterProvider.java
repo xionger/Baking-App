@@ -6,6 +6,7 @@ import com.xiongxh.baking_app.recipes.RecipesPresenter;
 
 public class PresenterProvider {
     public RecipesContract.Presenter recipesProvider(){
-        return new RecipesPresenter();
+        //return new RecipesPresenter();
+        return null;
     }
 }

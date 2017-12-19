@@ -19,7 +19,7 @@ public class RecipesLocalDataSource implements RecipesDataSource {
     RecipesDao mRecipesDao;
 
     public RecipesLocalDataSource(){
-        mRecipesDao = BakingApp.get().database.recipesDao();
+        //mRecipesDao = BakingApp.get().database.recipesDao();
     }
 
     public RecipesLocalDataSource(RecipesDao dao){

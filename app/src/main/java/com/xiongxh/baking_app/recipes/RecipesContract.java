@@ -20,7 +20,7 @@ public interface RecipesContract {
         void loadRecipes();
         void openRecipeDetails(long recipeId);
 
-        void syncData();
+        //void syncData();
 
         //ArrayList<Recipe> getLoadRecipes();
 

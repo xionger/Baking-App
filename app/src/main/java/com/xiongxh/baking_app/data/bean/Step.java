@@ -12,13 +12,13 @@ import com.xiongxh.baking_app.data.local.RecipesDbContract;
 
 import org.parceler.Parcel;
 
-
 @Entity(tableName = RecipesDbContract.STEPS_TABLE_NAME,
         foreignKeys = @ForeignKey(entity = Recipe.class,
                 parentColumns = "id",
                 childColumns = "recipeId",
                 onDelete = ForeignKey.CASCADE),
         indices = @Index("recipeId"))
+
 @Parcel(Parcel.Serialization.BEAN)
 public class Step {
 
@@ -31,15 +31,19 @@ public class Step {
     @SerializedName("id")
     @Expose
     private Integer idx;
+
     @SerializedName("description")
     @Expose
     private String description;
+
     @SerializedName("shortDescription")
     @Expose
     private String shortDescription;
+
     @SerializedName("videoURL")
     @Expose
     private String videoURL;
+
     @SerializedName("thumbnailURL")
     @Expose
     private String thumbnailURL;

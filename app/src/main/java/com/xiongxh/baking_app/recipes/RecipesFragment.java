@@ -48,17 +48,21 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         View rootView = inflater.inflate(R.layout.fragment_list_recipe, container, false);
         unbinder = ButterKnife.bind(this, rootView);
 
-        mRecipesAdapter = new RecipesAdapter(new ArrayList<>(0),
-                recipeId -> mRecipesPresenter.openRecipeDetails(recipeId));
+        //mRecipesAdapter = new RecipesAdapter(new ArrayList<>(0),
+        //        recipeId -> mRecipesPresenter.openRecipeDetails(recipeId));
+        mRecipesAdapter = new RecipesAdapter();
 
-        mLayoutManager = new GridLayoutManager(getContext(), 3);
+        mLayoutManager = new GridLayoutManager(getContext(), 1);
         mRecipesRecyclerView.setLayoutManager(mLayoutManager);
 
         mRecipesRecyclerView.setAdapter(mRecipesAdapter);
 
+        mRecipesPresenter = new RecipesPresenter(this);
+
         return rootView;
     }
 
+    /*
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
         if (savedInstanceState != null && savedInstanceState.containsKey(SAVED_SCROLL_POSITION)){
@@ -77,7 +81,7 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
     public void setPresenter(RecipesContract.Presenter presenter) {
         this.mRecipesPresenter = presenter;
     }
-
+*/
     @Override
     public void onResume(){
         super.onResume();

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xiongxh.baking_app.R;
@@ -16,15 +17,19 @@ import com.xiongxh.baking_app.adapter.IngredientAdapter;
 import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.recipedetail.RecipeDetailActivity;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder>{
 
     private final String LOG_TAG = RecipesAdapter.class.getSimpleName();
 
-    private List<Recipe> mRecipes;
-    final OnRecipeClickListener mRecipeClickListener;
-
+    private List<Recipe> mRecipes = new ArrayList<>();
+    //final OnRecipeClickListener mRecipeClickListener;
+/*
     public interface OnRecipeClickListener{
         void recipeClicked(int recipeId);
     }
@@ -33,7 +38,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         setRecipes(recipes);
         this.mRecipeClickListener = recipeClickListener;
     }
-
+*/
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -69,26 +74,33 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         this.mRecipes = recipes;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ViewHolder extends RecyclerView.ViewHolder{ //implements View.OnClickListener{
         private final String LOG_TAG = ViewHolder.class.getCanonicalName();
-        TextView mServingsView, mStepsCountView, mNameView;
-        RecyclerView mIngredientsView;
+        //TextView mServingsView, mStepsCountView, mNameView;
+        //RecyclerView mIngredientsView;
+
+        @BindView(R.id.tv_count_servings) TextView mServingsView;
+        @BindView(R.id.tv_recipe_title) TextView mNameView;
+        @BindView(R.id.iv_recipe_image) ImageView mImageView;
+        @BindView(R.id.tv_count_steps) TextView mStepsCountView;
+        //@BindView(R.id.rv_ingredients) RecyclerView mIngredientsView;
 
         private Recipe mRecipe;
 
         public ViewHolder (View itemView){
             super(itemView);
             Log.d(LOG_TAG, "Entering ViewHolder constructor...");
-            itemView.setOnClickListener(this);
+            ButterKnife.bind(this, itemView);
+            //itemView.setOnClickListener(this);
 
-            mServingsView = (TextView) itemView.findViewById(R.id.tv_count_servings);
-            mStepsCountView = (TextView) itemView.findViewById(R.id.tv_count_steps);
+            //mServingsView = (TextView) itemView.findViewById(R.id.tv_count_servings);
+            //mStepsCountView = (TextView) itemView.findViewById(R.id.tv_count_steps);
             //mNameView = (TextView) itemView.findViewById(R.id.tv_name);
-            mIngredientsView = (RecyclerView) itemView.findViewById(R.id.rv_ingredients);
+            //mIngredientsView = (RecyclerView) itemView.findViewById(R.id.rv_ingredients);
 
-            mIngredientsView.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
+            //mIngredientsView.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
         }
-
+/*
         @Override
         public void onClick(View view) {
             Context context = view.getContext();
@@ -96,15 +108,16 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             //intent.putExtra("recipe", mRecipe);
             context.startActivity(intent);
         }
-
-        public void bindRecipe(Recipe recipe){
-            this.mRecipe = recipe;
+*/
+        public void bindRecipe(final Recipe recipe){
+            //this.mRecipe = recipe;
             mNameView.setText(recipe.getName());
-            mServingsView.setText(recipe.getServings());
-            mStepsCountView.setText(recipe.getSteps().size());
+            mServingsView.setText("Servings: " + String.valueOf(recipe.getServings()));
+            mImageView.setImageResource(R.drawable.image_placeholder);
+            mStepsCountView.setText("Steps: " + String.valueOf(recipe.getSteps().size()));
 
-            IngredientAdapter ingredientAdapter = new IngredientAdapter(recipe.getIngredients());
-            mIngredientsView.setAdapter(ingredientAdapter);
+            //IngredientAdapter ingredientAdapter = new IngredientAdapter(recipe.getIngredients());
+            //mIngredientsView.setAdapter(ingredientAdapter);
         }
     }
 

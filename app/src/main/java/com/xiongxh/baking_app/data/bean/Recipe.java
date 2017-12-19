@@ -21,12 +21,15 @@ public class Recipe {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("name")
     @Expose
     private String name;
+
     @SerializedName("image")
     @Expose
     private String image;
+
     @SerializedName("servings")
     @Expose
     private Integer servings;
@@ -34,12 +37,12 @@ public class Recipe {
     @SerializedName("ingredients")
     @Expose
     @Ignore
-    private List<Ingredient> ingredients = new ArrayList<>();
+    private List<Ingredient> ingredients = null; // new ArrayList<>();
 
     @SerializedName("steps")
     @Expose
     @Ignore
-    private List<Step> steps = new ArrayList<>();
+    private List<Step> steps = null; // new ArrayList<>();
 
     public Recipe(){}
 
