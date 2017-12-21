@@ -18,7 +18,7 @@ public interface RecipesContract {
     interface Presenter extends BasePresenter<View> {
         //void loadRecipesFromRepository(boolean forceUpdate, RecipesIdlingResource resource);
         void loadRecipes();
-        void openRecipeDetails(long recipeId);
+        void openRecipeDetails(int recipeId);
 
         //void syncData();
 

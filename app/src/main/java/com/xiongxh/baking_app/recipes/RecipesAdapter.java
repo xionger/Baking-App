@@ -28,8 +28,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     private final String LOG_TAG = RecipesAdapter.class.getSimpleName();
 
     private List<Recipe> mRecipes = new ArrayList<>();
-    //final OnRecipeClickListener mRecipeClickListener;
-/*
+    final OnRecipeClickListener mRecipeClickListener;
+
     public interface OnRecipeClickListener{
         void recipeClicked(int recipeId);
     }
@@ -38,7 +38,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         setRecipes(recipes);
         this.mRecipeClickListener = recipeClickListener;
     }
-*/
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -74,7 +74,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         this.mRecipes = recipes;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{ //implements View.OnClickListener{
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final String LOG_TAG = ViewHolder.class.getCanonicalName();
         //TextView mServingsView, mStepsCountView, mNameView;
         //RecyclerView mIngredientsView;
@@ -86,12 +86,14 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         //@BindView(R.id.rv_ingredients) RecyclerView mIngredientsView;
 
         private Recipe mRecipe;
+        private int mRecipeId;
 
         public ViewHolder (View itemView){
             super(itemView);
             Log.d(LOG_TAG, "Entering ViewHolder constructor...");
             ButterKnife.bind(this, itemView);
-            //itemView.setOnClickListener(this);
+
+            itemView.setOnClickListener(this);
 
             //mServingsView = (TextView) itemView.findViewById(R.id.tv_count_servings);
             //mStepsCountView = (TextView) itemView.findViewById(R.id.tv_count_steps);
@@ -100,17 +102,20 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
             //mIngredientsView.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
         }
-/*
+
         @Override
         public void onClick(View view) {
-            Context context = view.getContext();
-            Intent intent = new Intent(context, RecipeDetailActivity.class);
+            //Context context = view.getContext();
+            //Intent intent = new Intent(context, RecipeDetailActivity.class);
             //intent.putExtra("recipe", mRecipe);
-            context.startActivity(intent);
+            //context.startActivity(intent);
+            mRecipeClickListener.recipeClicked(mRecipeId);
         }
-*/
+
         public void bindRecipe(final Recipe recipe){
-            //this.mRecipe = recipe;
+            this.mRecipe = recipe;
+            this.mRecipeId = recipe.getId();
+
             mNameView.setText(recipe.getName());
             mServingsView.setText("Servings: " + String.valueOf(recipe.getServings()));
             mImageView.setImageResource(R.drawable.image_placeholder);

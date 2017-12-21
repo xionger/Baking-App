@@ -78,7 +78,7 @@ public class RecipesPresenter implements RecipesContract.Presenter{
         mRecipesView.showLoadingIndicator(true);
         //mDisposableRecipes.clear();
 
-        Disposable disposableRecipe = mRecipesInteractor
+        Disposable disposableRecipes = mRecipesInteractor
                 .getRecipes()
                 .subscribeWith(new DisposableSingleObserver<List<Recipe>>() {
                     @Override
@@ -96,7 +96,7 @@ public class RecipesPresenter implements RecipesContract.Presenter{
                     }
                 });
 
-        mDisposableRecipes.add(disposableRecipe);
+        mDisposableRecipes.add(disposableRecipes);
     }
 
     /*
@@ -161,7 +161,7 @@ public class RecipesPresenter implements RecipesContract.Presenter{
     }*/
 
     @Override
-    public void openRecipeDetails(long recipeId) {
+    public void openRecipeDetails(int recipeId) {
         mRecipesView.showRecipeDetails(recipeId);
     }
 
