@@ -26,6 +26,7 @@ import butterknife.ButterKnife;
 public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder>{
 
     private final String LOG_TAG = RecipesAdapter.class.getSimpleName();
+    private static final String RECIPE_ID_KEY = "RECIPIE_ID";
 
     private List<Recipe> mRecipes = new ArrayList<>();
     final OnRecipeClickListener mRecipeClickListener;
@@ -105,11 +106,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         @Override
         public void onClick(View view) {
-            //Context context = view.getContext();
-            //Intent intent = new Intent(context, RecipeDetailActivity.class);
-            //intent.putExtra("recipe", mRecipe);
-            //context.startActivity(intent);
-            mRecipeClickListener.recipeClicked(mRecipeId);
+            Context context = view.getContext();
+            Intent intent = new Intent(context, RecipeDetailActivity.class);
+            intent.putExtra(RECIPE_ID_KEY, mRecipeId);
+            context.startActivity(intent);
+            //mRecipeClickListener.recipeClicked(mRecipeId);
         }
 
         public void bindRecipe(final Recipe recipe){

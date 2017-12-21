@@ -27,7 +27,7 @@ import butterknife.Unbinder;
 
 public class RecipeDetailFragment extends Fragment implements RecipeDetailContract.View{
 
-    private static final String RECIPE_KEY = "RECIPIE_ID";
+    private static final String RECIPE_ID_KEY = "RECIPIE_ID";
     private int mRecipeId;
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
     private RecipeDetailAdapter mRecipeDetailAdapter;
@@ -44,7 +44,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     public static RecipeDetailFragment newInstance(int recipeId){
         Bundle args = new Bundle();
         RecipeDetailFragment recipeDetailFragment = new RecipeDetailFragment();
-        args.putInt(RECIPE_KEY, recipeId);
+        args.putInt(RECIPE_ID_KEY, recipeId);
         recipeDetailFragment.setArguments(args);
 
         return recipeDetailFragment;
@@ -70,7 +70,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     @Override
     public void onActivityCreated(@NonNull Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        mRecipeId = getArguments().getInt(RECIPE_KEY);
+        mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
         mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
     }
 
