@@ -1,7 +1,14 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Baking-App</string>
     <string name="action_refresh">Refresh Recipes</string>
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
     <string name="servings">Servings</string>
+
+    <!-- Recipe Details -->
+    <string name="details_ingredients_header"><b>Ingredients list:</b></string>
+    <string name="details_ingredient_line" translatable="false">
+    <xliff:g id="bullet">\u2022</xliff:g> <xliff:g id="name">%s</xliff:g>
+    (<xliff:g id="quantity">%s</xliff:g> <xliff:g id="measure">%s</xliff:g>)
+  </string>
 </resources>

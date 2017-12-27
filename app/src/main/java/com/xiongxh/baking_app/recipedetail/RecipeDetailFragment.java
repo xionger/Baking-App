@@ -5,6 +5,7 @@ import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.style.StyleSpan;
@@ -20,12 +21,15 @@ import com.xiongxh.baking_app.data.bean.Ingredient;
 import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
 import com.xiongxh.baking_app.recipes.RecipesContract;
+import com.xiongxh.baking_app.utils.IngredientsFormatUtils;
 
 import java.util.List;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import timber.log.Timber;
 
 public class RecipeDetailFragment extends Fragment implements RecipeDetailContract.View{
 
@@ -42,6 +46,9 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
     @BindView(R.id.rv_steps_recipe)
     RecyclerView mStepsRecyclerView;
+
+    @BindString(R.string.details_ingredients_header)
+    String ingredientsListHeader;
 
     public RecipeDetailFragment(){}
 
@@ -67,6 +74,9 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mStepsRecyclerView.setLayoutManager(layoutManager);
         mStepsRecyclerView.setHasFixedSize(true);
         mStepsRecyclerView.setAdapter(mRecipeDetailAdapter);
+
+        mStepsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+                        DividerItemDecoration.VERTICAL));
 
         Log.d(LOG_TAG, "Before returning rootview of details ....");
 
@@ -114,23 +124,29 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     @Override
     public void showIngredients(List<Ingredient> ingredientList) {
         StringBuilder sb = new StringBuilder();
-        //sb.append(ingredientsListHeader);
+        sb.append(ingredientsListHeader);
 
         for (Ingredient ingredient : ingredientList) {
-            sb.append("\n");
-            /*
+
             String name = ingredient.getIngredient();
             double quantity = ingredient.getQuantity();
             String measure = ingredient.getMeasure();
 
             sb.append("\n");
-            sb.append(StringUtils.formatIngdedient(getContext(), name, quantity, measure));
-            */
-            sb.append(ingredient.toString());
-        }
 
-        //TextViewUtils.setTextWithSpan(recipeDetailsIngredients, sb.toString(), ingredientsListHeader, new StyleSpan(Typeface.BOLD));
-        Log.d(LOG_TAG, "Recipe ingredients: " + sb.toString());
+            sb.append(IngredientsFormatUtils.formatIngredient(getContext(), name, quantity, measure));
+
+            //sb.append(ingredient.toString());
+        }
+        Timber.d(sb.toString());
+        /*
+        IngredientsFormatUtils.setTextWithSpan(mIngredientsView,
+                sb.toString(),
+                ingredientsListHeader,
+                new StyleSpan(Typeface.BOLD));
+
+        //Log.d(LOG_TAG, "Recipe ingredients: " + sb.toString());
+        */
         mIngredientsView.setText(sb.toString());
     }
 
