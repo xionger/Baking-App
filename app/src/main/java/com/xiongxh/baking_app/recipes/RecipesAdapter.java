@@ -2,6 +2,7 @@ package com.xiongxh.baking_app.recipes;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,8 +30,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     private static final String RECIPE_ID_KEY = "RECIPIE_ID";
 
     private List<Recipe> mRecipes = new ArrayList<>();
-    final OnRecipeClickListener mRecipeClickListener;
 
+    final OnRecipeClickListener mRecipeClickListener;
     public interface OnRecipeClickListener{
         void recipeClicked(int recipeId);
     }
@@ -91,26 +92,19 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         public ViewHolder (View itemView){
             super(itemView);
-            Log.d(LOG_TAG, "Entering ViewHolder constructor...");
             ButterKnife.bind(this, itemView);
 
             itemView.setOnClickListener(this);
-
-            //mServingsView = (TextView) itemView.findViewById(R.id.tv_count_servings);
-            //mStepsCountView = (TextView) itemView.findViewById(R.id.tv_count_steps);
-            //mNameView = (TextView) itemView.findViewById(R.id.tv_name);
-            //mIngredientsView = (RecyclerView) itemView.findViewById(R.id.rv_ingredients);
-
-            //mIngredientsView.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
         }
 
         @Override
         public void onClick(View view) {
+            mRecipeClickListener.recipeClicked(mRecipeId);
             Context context = view.getContext();
             Intent intent = new Intent(context, RecipeDetailActivity.class);
             intent.putExtra(RECIPE_ID_KEY, mRecipeId);
+            Log.d(LOG_TAG, "Recipe ID: " + mRecipeId);
             context.startActivity(intent);
-            //mRecipeClickListener.recipeClicked(mRecipeId);
         }
 
         public void bindRecipe(final Recipe recipe){
@@ -121,9 +115,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             mServingsView.setText("Servings: " + String.valueOf(recipe.getServings()));
             mImageView.setImageResource(R.drawable.image_placeholder);
             mStepsCountView.setText("Steps: " + String.valueOf(recipe.getSteps().size()));
-
-            //IngredientAdapter ingredientAdapter = new IngredientAdapter(recipe.getIngredients());
-            //mIngredientsView.setAdapter(ingredientAdapter);
         }
     }
 

@@ -8,9 +8,7 @@ import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
 
 import java.util.List;
-//import java.util.Observable;
 
-import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 
@@ -19,12 +17,12 @@ public class RecipesLocalDataSource implements RecipesDataSource {
     RecipesDao mRecipesDao;
 
     public RecipesLocalDataSource(){
-        //mRecipesDao = BakingApp.get().database.recipesDao();
+        mRecipesDao = BakingApp.get().database.recipesDao();
     }
 
-    public RecipesLocalDataSource(RecipesDao dao){
-        this.mRecipesDao = dao;
-    }
+    //public RecipesLocalDataSource(RecipesDao dao){
+    //    this.mRecipesDao = dao;
+    //}
 
     private Observable<Recipe> getIngredientsAndSteps(Recipe recipe){
         return Observable.just(recipe).map(recipe1 -> {

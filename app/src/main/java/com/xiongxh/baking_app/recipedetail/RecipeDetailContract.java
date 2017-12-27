@@ -14,6 +14,7 @@ public interface RecipeDetailContract {
         void showRecipeDetails(Recipe recipe);
         void showIngredients(List<Ingredient> ingredientList);
         void showSteps(List<Step> stepList);
+        void showRecipeName(String recipeName);
         void showMessage(String message);
     }
 

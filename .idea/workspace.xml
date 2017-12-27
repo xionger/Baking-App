@@ -10,7 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7420735e-a1e6-499c-9cdf-e409c4e7159d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/image_placeholder.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-06-22-38-948.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-06-22-38-948.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-06-23-18-302.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-06-23-18-302.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-06-56-10-837.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-06-56-10-837.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-03-27-874.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-03-27-874.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-12-45-233.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-12-45-233.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-16-25-377.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-16-25-377.rawproto" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-27-30-159.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-12-21-07-27-30-159.rawproto" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/javaCompile/classAnalysis.bin" />
@@ -20,9 +33,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesRepository.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDatabase.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDatabase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesLocalDataSource.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesLocalDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/remote/RecipesRemoteDataSource.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/remote/RecipesRemoteDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailContract.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailContract.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailPresenter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailPresenter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_list_recipe.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_list_recipe.xml" />
     </list>
     <ignored path="Baking-App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,25 +156,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RecipesFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesFragment.java">
+      <file leaf-file-name="RecipeDetailFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1111">
-              <caret line="91" column="13" lean-forward="false" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+            <state relative-caret-position="-47">
+              <caret line="99" column="26" lean-forward="false" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1513861391000" expanded="false" signature="2553:2555" ph=" { " />
-                <marker date="1513861391000" expanded="false" signature="2727:2733" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecipesAdapter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RecipesAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+            <state relative-caret-position="-403">
+              <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,36 +180,86 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecipeDetailActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailActivity.java">
+      <file leaf-file-name="RecipeDetailPresenter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="-573">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecipeInteractor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipeInteractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RecipeDetailFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailFragment.java">
+      <file leaf-file-name="RxScheduler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/rx/RxScheduler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+            <state relative-caret-position="210">
+              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecipesRepository.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="37" column="57" lean-forward="true" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1829#1830#0" expanded="true" />
+                <element signature="e#1888#1889#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item_list_recipe.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_list_recipe.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="RecipesDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="219">
+              <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecipesDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="10" column="78" lean-forward="false" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecipesInteractor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipesInteractor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BakingApp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/BakingApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="53" column="54" lean-forward="false" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -2010,7 +2079,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/bean/RecipeList.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDbContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDatabase.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesDataSource.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipePreferences.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/utils/RxUtils.java" />
@@ -2019,7 +2087,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipeInteractor.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipesInteractor.java" />
         <option value="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/remote/RecipesRemoteDataSource.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/utils/FagmentUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/utils/FragmentUtils.java" />
@@ -2027,15 +2094,12 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/bools.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/base/PresenterProvider.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesLocalDataSource.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/api/ApiService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/bean/Recipe.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/bean/Ingredient.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/bean/Step.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/BakingApp.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/api/RecipeApiService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/base/BaseView.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
@@ -2043,20 +2107,25 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_list_recipe.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_recipe_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_recipe_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_recipe_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesPresenter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesContract.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_list_recipe.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesLocalDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailPresenter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/remote/RecipesRemoteDataSource.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDatabase.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesRepository.java" />
       </list>
     </option>
   </component>
@@ -2083,9 +2152,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2106,28 +2176,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Baking-App" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2160,6 +2208,28 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="baking_app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Baking-App" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="baking_app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rx" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2250,7 +2320,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Interactor" />
+              <option name="myItemId" value="remote" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2276,7 +2346,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bean" />
+              <option name="myItemId" value="local" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2298,27 +2368,16 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="base" />
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Baking-App" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidManifestsGroupNode" />
+              <option name="myItemId" value="Interactor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2489,8 +2548,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513862892815" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514394698448" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -2535,8 +2593,7 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513862892815" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514394698448" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -2568,27 +2625,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -2716,8 +2752,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1513862892816" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514394698448" />
       </method>
     </configuration>
     <list size="4">
@@ -2791,16 +2826,15 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.35264665" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14037627" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5701881" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.64688855" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33863965" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299566" sideWeight="0.35264665" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26824033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12875536" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2815,6 +2849,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1519537" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -2916,31 +2951,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/rx/RxScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/base/PresenterProvider.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/remote/RecipesRemoteDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="15" column="71" lean-forward="false" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -2949,27 +2963,6 @@
         <state relative-caret-position="179">
           <caret line="44" column="58" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="44" selection-end-column="58" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesLocalDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-436">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDbContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -2987,39 +2980,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="1" lean-forward="false" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/base/BasePresenter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="25" column="47" lean-forward="false" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/BakingApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="47" lean-forward="false" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipePreferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -3070,7 +3034,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3081,34 +3044,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="10" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="15" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-299">
-          <caret line="35" column="56" lean-forward="true" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
-          <folding>
-            <marker date="1513568127000" expanded="false" signature="2297:2328" ph="&quot;Open&quot;" />
-            <marker date="1513568127000" expanded="false" signature="2330:2362" ph="&quot;Close&quot;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipesInteractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipeInteractor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3119,7 +3054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="103" lean-forward="false" selection-start-line="1" selection-start-column="103" selection-end-line="1" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3138,7 +3072,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3157,40 +3090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="58" lean-forward="true" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailPresenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="54" column="63" lean-forward="false" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="44" lean-forward="false" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#1431#1432#0" expanded="true" />
-            <element signature="e#1467#1468#0" expanded="true" />
-            <element signature="e#1524#1525#0" expanded="true" />
-            <element signature="e#1575#1576#0" expanded="true" />
-            <element signature="e#1737#1738#0" expanded="true" />
-            <element signature="e#1772#1773#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3198,7 +3097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="26" column="59" lean-forward="false" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3219,20 +3117,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="67" lean-forward="true" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="167" column="1" lean-forward="false" selection-start-line="167" selection-start-column="1" selection-end-line="167" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="21" column="67" lean-forward="true" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
           <folding />
         </state>
       </provider>
@@ -3248,18 +3138,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipePreferences.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDbContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="32" column="6" lean-forward="false" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1111">
-          <caret line="91" column="13" lean-forward="false" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
+        <state relative-caret-position="552">
+          <caret line="63" column="24" lean-forward="false" selection-start-line="63" selection-start-column="24" selection-end-line="63" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1513861391000" expanded="false" signature="2553:2555" ph=" { " />
@@ -3268,10 +3173,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="5" lean-forward="false" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <folding>
+            <marker date="1514388172000" expanded="false" signature="2066:2097" ph="&quot;Open&quot;" />
+            <marker date="1514388172000" expanded="false" signature="2099:2131" ph="&quot;Close&quot;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        <state relative-caret-position="-47">
+          <caret line="99" column="26" lean-forward="false" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -3280,10 +3222,103 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipes/RecipesAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="127" column="5" lean-forward="true" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+        <state relative-caret-position="-403">
+          <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/recipedetail/RecipeDetailPresenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-573">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/rx/RxScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipeInteractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="21" column="53" lean-forward="false" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesLocalDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="66" column="75" lean-forward="false" selection-start-line="66" selection-start-column="75" selection-end-line="66" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/remote/RecipesRemoteDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" column="42" lean-forward="false" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/BakingApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="53" column="54" lean-forward="false" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/Interactor/RecipesInteractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="78" lean-forward="false" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/local/RecipesDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="25" column="52" lean-forward="false" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/xiongxh/baking_app/data/RecipesRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="37" column="57" lean-forward="true" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+          <folding>
+            <element signature="e#1829#1830#0" expanded="true" />
+            <element signature="e#1888#1889#0" expanded="true" />
           </folding>
         </state>
       </provider>

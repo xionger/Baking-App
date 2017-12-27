@@ -1,12 +1,14 @@
 package com.xiongxh.baking_app.recipedetail;
 
 import android.graphics.Typeface;
+import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.style.StyleSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,8 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class RecipeDetailFragment extends Fragment implements RecipeDetailContract.View{
+
+    private static final String LOG_TAG = RecipeDetailFragment.class.getSimpleName();
 
     private static final String RECIPE_ID_KEY = "RECIPIE_ID";
     private int mRecipeId;
@@ -64,19 +68,47 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mStepsRecyclerView.setHasFixedSize(true);
         mStepsRecyclerView.setAdapter(mRecipeDetailAdapter);
 
+        Log.d(LOG_TAG, "Before returning rootview of details ....");
+
         return rootView;
     }
 
     @Override
     public void onActivityCreated(@NonNull Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
+        Log.d(LOG_TAG, "Entering onActivityCreated...");
         mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
         mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
+        Log.d(LOG_TAG, "Exiting onActivityCreated...");
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        mRecipeDetailPresenter.subscribe(this);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        mRecipeDetailPresenter.unsubscribe();
+    }
+
+    @Override
+    public void onDestroyView(){
+        super.onDestroyView();
+        unbinder.unbind();
     }
 
     @Override
     public void showRecipeDetails(Recipe recipe) {
+        Log.d(LOG_TAG, "Recipe name: " + recipe.getName());
+    }
 
+
+    @Override
+    public void showRecipeName(String recipeName) {
+        getActivity().setTitle(recipeName);
     }
 
     @Override
@@ -98,6 +130,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         }
 
         //TextViewUtils.setTextWithSpan(recipeDetailsIngredients, sb.toString(), ingredientsListHeader, new StyleSpan(Typeface.BOLD));
+        Log.d(LOG_TAG, "Recipe ingredients: " + sb.toString());
         mIngredientsView.setText(sb.toString());
     }
 

@@ -11,6 +11,7 @@ import com.xiongxh.baking_app.rx.RxScheduler;
 import java.util.List;
 import io.reactivex.Observable;
 import io.reactivex.Single;
+import timber.log.Timber;
 
 public class RecipesRepository implements RecipesDataSource {
 
@@ -23,18 +24,25 @@ public class RecipesRepository implements RecipesDataSource {
     }
 
     public boolean isSynced(){
-        return BakingApp.get().recipePreferences.isRecipesSynced();
+        //return BakingApp.get().recipePreferences.isRecipesSynced();
+        return false;
     }
 
     @Override
     public Single<List<Recipe>> getRecipes() {
 
-        return mRecipesRemoteDataSource.getRecipes().compose(RxScheduler.applySchedulersSingle());
+        if (isSynced()){
+            return mRecipesLocalDataSource.getRecipes();
+        }else {
+            Timber.d("Data is not up to date.");
+            return mRecipesRemoteDataSource.getRecipes();
+        }
     }
 
     @Override
     public Single<Recipe> getRecipe(int recipeId) {
-        return null;
+        Timber.d("Get single recipe data from local database");
+        return mRecipesLocalDataSource.getRecipe(recipeId);
     }
 
     @Override
@@ -49,6 +57,6 @@ public class RecipesRepository implements RecipesDataSource {
 
     @Override
     public void setRecipes(List<Recipe> recipes) {
-
+        mRecipesLocalDataSource.setRecipes(recipes);
     }
 }

@@ -9,10 +9,12 @@ import com.xiongxh.baking_app.data.bean.Step;
 import java.util.List;
 
 import io.reactivex.Single;
+import timber.log.Timber;
 
 public class RecipesRemoteDataSource implements RecipesDataSource{
     @Override
     public Single<List<Recipe>> getRecipes() {
+        Timber.d("Get recipes data from API");
         return RecipeApiService.initService().fetchRecipesFromServer();
     }
 

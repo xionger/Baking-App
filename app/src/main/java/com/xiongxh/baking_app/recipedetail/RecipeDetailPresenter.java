@@ -1,17 +1,16 @@
 package com.xiongxh.baking_app.recipedetail;
 
-
-import android.support.annotation.NonNull;
-
 import com.xiongxh.baking_app.data.Interactor.RecipeInteractor;
 import com.xiongxh.baking_app.data.bean.Recipe;
 
+import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableSingleObserver;
 import timber.log.Timber;
 
 public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
+    private static final String LOG_TAG = RecipeDetailPresenter.class.getSimpleName();
 
     private RecipeDetailContract.View mRecipeView;
     private RecipeInteractor mRecipeInteractor;
@@ -31,6 +30,7 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
 
     @Override
     public void subscribe(RecipeDetailContract.View view) {
+        Timber.d("Entering subscribe ...");
         this.mRecipeView = view;
         loadRecipeDetails();
     }
@@ -42,7 +42,7 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
 
     @Override
     public void loadRecipeDetails() {
-        Timber.d("Loading recipe ...");
+        Timber.d("Loading recipe detail...");
         //mRecipeView.showLoadingIndicator(true);
 
         Disposable disposableRecipe = mRecipeInteractor
