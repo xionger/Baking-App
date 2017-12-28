@@ -14,11 +14,13 @@ public interface RecipeDetailContract {
         void showRecipeDetails(Recipe recipe);
         void showIngredients(List<Ingredient> ingredientList);
         void showSteps(List<Step> stepList);
+        void showStepDetails(int stepId);
         void showRecipeName(String recipeName);
         void showMessage(String message);
     }
 
     interface Presenter extends BasePresenter<View>{
         void loadRecipeDetails();
+        void openStepDetails(int stepId);
     }
 }

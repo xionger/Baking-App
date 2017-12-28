@@ -15,8 +15,7 @@ import org.parceler.Parcel;
         foreignKeys = @ForeignKey(entity = Recipe.class,
                 parentColumns = "id",
                 childColumns = "recipeId",
-                onDelete = ForeignKey.CASCADE),
-        indices = @Index("recipeId"))
+                onDelete = ForeignKey.CASCADE))
 
 @Parcel(Parcel.Serialization.BEAN)
 public class Ingredient {

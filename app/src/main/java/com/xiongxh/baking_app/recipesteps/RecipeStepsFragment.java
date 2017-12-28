@@ -2,7 +2,7 @@ package com.xiongxh.baking_app.recipesteps;
 
 
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +19,7 @@ import com.xiongxh.baking_app.data.bean.Step;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import timber.log.Timber;
 
 
 public class RecipeStepsFragment extends Fragment implements RecipeStepsContract.View {
@@ -34,10 +35,12 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     TextView mStepTextView;
     @BindView(R.id.tv_step_number)
     TextView mStepNumberTextView;
+    /*
     @BindView(R.id.btn_backward)
     Button mBackButton;
     @BindView(R.id.btn_forward)
     Button mNextButton;
+    */
 
     public RecipeStepsFragment() {
         // Required empty public constructor
@@ -63,16 +66,19 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
 
         if (null != savedInstanceState){
             stepId = savedInstanceState.getInt(STEP_ID_KEY);
+            Timber.d("savedInstanceState is null, stepId: " + stepId);
         }else {
             stepId = getArguments().getInt(STEP_ID_KEY);
+            Timber.d("savedInstanceState is not null, stepId: " + stepId);
         }
 
         int recipeId = getArguments().getInt(RECIPE_ID_KEY);
+        Timber.d("recipeId: " + recipeId);
 
         mRecipeStepsPresenter = new RecipeStepsPresenter(this, recipeId, stepId);
 
-        mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
-        mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
+        //mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
+        //mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
 
         return rootView;
     }
@@ -104,7 +110,17 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
 
     @Override
     public void showStep(Step step, @NonNull SimpleExoPlayer player){
-        mPlayView.getPlayer().release();
+        if (null != mPlayView.getPlayer()) {
+            mPlayView.getPlayer().release();
+        }
+        mStepTextView.setText(step.getDescription());
+
+        if (null == player){
+            mPlayView.setVisibility(View.GONE);
+        }else{
+            mPlayView.setVisibility(View.VISIBLE);
+            mPlayView.setPlayer(player);
+        }
     }
 
     @Override

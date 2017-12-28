@@ -64,4 +64,9 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
 
         mDisposableRecipe.add(disposableRecipe);
     }
+
+    @Override
+    public void openStepDetails(int stepId) {
+        mRecipeView.showStepDetails(stepId);
+    }
 }

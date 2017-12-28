@@ -105,6 +105,8 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
 
         Step step = mRecipe.getSteps().get(position);
 
+        Timber.d("position: " + position + "; step description: " + step.getDescription());
+
         SimpleExoPlayer simpleExoPlayer = null;
 
         if (null != step.getVideoURL() && !step.getVideoURL().isEmpty()){

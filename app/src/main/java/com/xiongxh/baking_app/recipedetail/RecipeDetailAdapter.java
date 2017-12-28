@@ -1,5 +1,7 @@
 package com.xiongxh.baking_app.recipedetail;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Step;
+import com.xiongxh.baking_app.recipesteps.RecipeStepsActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,20 +22,27 @@ import java.util.Locale;
 import butterknife.BindColor;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import timber.log.Timber;
 
 public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapter.StepViewHolder>{
+    private static final String RECIPE_ID_KEY = "RECIPIE_ID";
+    private static final String STEP_ID_KEY = "STEP_ID";
 
     private List<Step> mSteps = new ArrayList<>();
 
-    //final OnStepClickListener recipeClickListener;
+    final OnStepClickListener recipeClickListener;
 
     int currentPos;
-/*
+
+    interface OnStepClickListener {
+
+        void stepClicked(int stepId);
+    }
+
     RecipeDetailAdapter(List<Step> steps, OnStepClickListener listener) {
         setSteps(steps);
         recipeClickListener = listener;
     }
-    */
 
     @Override
     public StepViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -66,7 +76,7 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
         this.mSteps = steps;
     }
 
-    class StepViewHolder extends RecyclerView.ViewHolder {// implements View.OnClickListener {
+    class StepViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         //@BindView(R.id.list_step_layout)
         //RelativeLayout stepItemLayout;
@@ -80,21 +90,21 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
         int currentItemBackground;
         */
 
-        //private int mSepId;
+        private int mStepId;
 
         StepViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
 
-            //itemView.setOnClickListener(this);
+            itemView.setOnClickListener(this);
         }
 
         void bindStep(@NonNull Step step, int bindPosition) {
 
-            int stepId = step.getId();
+            mStepId = step.getIdx();
             String description = step.getShortDescription();
 
-            mShortDescriptionView.setText(String.format(Locale.US, "%d. %s", stepId, description));
+            mShortDescriptionView.setText(String.format(Locale.US, "%d. %s", mStepId, description));
 
             /*
             String video = step.getVideoURL();
@@ -112,19 +122,21 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
             }
             */
         }
-/*
-        @Override
-        public void onClick(View v) {
-            currentPos = currentId;
-            recipeClickListener.stepClicked(currentId);
-            notifyDataSetChanged();
-        }
-        */
-    }
-/*
-    interface OnStepClickListener {
 
-        void stepClicked(int stepId);
+        @Override
+        public void onClick(View view) {
+            //currentPos = mStepId;
+            recipeClickListener.stepClicked(mStepId);
+            notifyDataSetChanged();
+            /*
+            Context context = view.getContext();
+            Intent intent = new Intent(context, RecipeStepsActivity.class);
+            //intent.putExtra(RECIPE_ID_KEY, mRecipeId);
+            intent.putExtra(STEP_ID_KEY, mStepId);
+            Timber.d("Step ID: " + mStepId);
+            context.startActivity(intent);
+            */
+        }
     }
-    */
+
 }

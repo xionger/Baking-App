@@ -1,29 +1,13 @@
 package com.xiongxh.baking_app.recipes;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
-import android.support.v7.widget.Toolbar;
 
-import com.xiongxh.baking_app.BakingApp;
 import com.xiongxh.baking_app.R;
-import com.xiongxh.baking_app.data.bean.Recipe;
-import com.xiongxh.baking_app.utils.ActivityUtils;
-import com.xiongxh.baking_app.utils.FragmentUtils;
 
-import java.util.List;
-
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RecipesActivity extends AppCompatActivity {

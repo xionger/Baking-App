@@ -21,8 +21,10 @@ import com.xiongxh.baking_app.data.bean.Ingredient;
 import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
 import com.xiongxh.baking_app.recipes.RecipesContract;
+import com.xiongxh.baking_app.recipesteps.RecipeStepsActivity;
 import com.xiongxh.baking_app.utils.IngredientsFormatUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindString;
@@ -67,7 +69,8 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
         unbinder = ButterKnife.bind(this, rootView);
 
-        mRecipeDetailAdapter = new RecipeDetailAdapter();
+        mRecipeDetailAdapter = new RecipeDetailAdapter(new ArrayList<>(0),
+                stepId -> mRecipeDetailPresenter.openStepDetails(stepId));
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
 
@@ -153,6 +156,11 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     @Override
     public void showSteps(List<Step> stepList) {
         mRecipeDetailAdapter.refreshSteps(stepList);
+    }
+
+    @Override
+    public void showStepDetails(int stepId){
+        startActivity(RecipeStepsActivity.prepareIntent(getContext(), mRecipeId, stepId));
     }
 
     @Override
