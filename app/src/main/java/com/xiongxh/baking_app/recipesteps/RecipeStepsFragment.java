@@ -111,7 +111,10 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     @Override
     public void showStep(Step step, @NonNull SimpleExoPlayer player){
         if (null != mPlayView.getPlayer()) {
+            Timber.d("mPlayerView is not null ...");
             mPlayView.getPlayer().release();
+        } else{
+            Timber.d("mPlayerView is null ...");
         }
         mStepTextView.setText(step.getDescription());
 

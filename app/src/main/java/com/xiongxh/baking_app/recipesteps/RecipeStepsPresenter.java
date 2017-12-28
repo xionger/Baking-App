@@ -115,7 +115,11 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
 
             Uri uri = Uri.parse(step.getVideoURL());
 
+            Timber.d("uri: " + uri);
+
             String userAgent = Util.getUserAgent(BakingApp.get(), "Recipe Step");
+
+            Timber.d("useragent: " + userAgent);
 
             OkHttpDataSource.Factory factory =
                     new OkHttpDataSourceFactory(BakingApp.get().client, userAgent, null);
@@ -125,6 +129,11 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
 
             simpleExoPlayer.prepare(mediaSource);
             simpleExoPlayer.setPlayWhenReady(true);
+        }
+        if (simpleExoPlayer == null){
+            Timber.d("simpleexoplayer is null...");
+        }else{
+            Timber.d("simpleexoplayer is not null...");
         }
 
         mStepView.showStep(step, simpleExoPlayer);
