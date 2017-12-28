@@ -17,7 +17,7 @@
         android:textSize="16dp"
         tools:ignore="RelativeOverlap"
         tools:text="Recipe Introduction"/>
-<!--
+    <!--
     <ImageView
         android:id="@+id/list_step_video_icon"
         android:layout_width="100dp"
