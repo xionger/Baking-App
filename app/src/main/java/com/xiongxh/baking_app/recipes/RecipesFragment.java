@@ -9,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.google.common.base.MoreObjects;
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Recipe;
 
@@ -113,17 +115,23 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
 
     @Override
     public void showLoadingIndicator(boolean show) {
-
+        if (show){
+            mRecipesRecyclerView.setVisibility(View.INVISIBLE);
+            mRecipesProgressbar.setVisibility(View.VISIBLE);
+        } else{
+            mRecipesRecyclerView.setVisibility(View.VISIBLE);
+            mRecipesProgressbar.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
     public void showLoadingRecipesErrorMessage(String error) {
-
+        Toast.makeText(getContext(), error, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void showLoadingRecipesCompletedMessage() {
-
+        Toast.makeText(getContext(), "Loading completed!", Toast.LENGTH_SHORT).show();
     }
 
     @Override

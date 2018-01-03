@@ -2,6 +2,7 @@ package com.xiongxh.baking_app.recipesteps;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
@@ -35,12 +36,11 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     TextView mStepTextView;
     @BindView(R.id.tv_step_number)
     TextView mStepNumberTextView;
-    /*
+
     @BindView(R.id.btn_backward)
-    Button mBackButton;
+    FloatingActionButton mBackButton;
     @BindView(R.id.btn_forward)
-    Button mNextButton;
-    */
+    FloatingActionButton mNextButton;
 
     public RecipeStepsFragment() {
         // Required empty public constructor
@@ -77,8 +77,8 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
 
         mRecipeStepsPresenter = new RecipeStepsPresenter(this, recipeId, stepId);
 
-        //mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
-        //mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
+        mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
+        mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
 
         return rootView;
     }

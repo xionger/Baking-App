@@ -10,7 +10,7 @@ public interface RecipesContract {
     interface View extends BaseView<Presenter> {
         void showRecipeList(List<Recipe> recipeList);
         void showLoadingIndicator(boolean show);
-        void showLoadingRecipesErrorMessage(String errorMessage);
+        void showLoadingRecipesErrorMessage(String error);
         void showLoadingRecipesCompletedMessage();
         void showRecipeDetails(long recipeId);
     }

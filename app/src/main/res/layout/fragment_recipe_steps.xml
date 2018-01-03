@@ -42,8 +42,8 @@
             android:id="@+id/btn_backward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/back_to_48"
-            app:fabSize="normal" />
+            android:src="@drawable/back_to_96"
+            app:fabSize="mini"/>
 
         <TextView
             android:id="@+id/tv_step_number"
@@ -56,8 +56,8 @@
             android:id="@+id/btn_forward"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next_page_48"
-            app:fabSize="normal" />
+            android:src="@drawable/next_page_96"
+            app:fabSize="mini"/>
 
     </LinearLayout>
 
