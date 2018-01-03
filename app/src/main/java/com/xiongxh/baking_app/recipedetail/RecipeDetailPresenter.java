@@ -53,12 +53,13 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
                         mRecipeView.showRecipeDetails(recipe);
                         mRecipeView.showIngredients(recipe.getIngredients());
                         mRecipeView.showSteps(recipe.getSteps());
+                        mRecipeView.showRecipeName(recipe.getName());
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e){
                         Timber.e(e);
-                        mRecipeView.showMessage(e.getMessage());
+                        mRecipeView.showErrorMessage(e.getMessage());
                     }
                 });
 

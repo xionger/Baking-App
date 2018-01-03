@@ -16,7 +16,7 @@ public interface RecipeDetailContract {
         void showSteps(List<Step> stepList);
         void showStepDetails(int stepId);
         void showRecipeName(String recipeName);
-        void showMessage(String message);
+        void showErrorMessage(String message);
     }
 
     interface Presenter extends BasePresenter<View>{
