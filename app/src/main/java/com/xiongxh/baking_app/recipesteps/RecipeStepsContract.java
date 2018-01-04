@@ -10,6 +10,8 @@ public interface RecipeStepsContract {
         void showStep(Step step, SimpleExoPlayer player);
         void setStepNumber(String stepNumber);
         void showErrorMessage(String message);
+        void setBackButton(boolean existed);
+        void setNextButton(boolean existed);
     }
 
     interface Presenter extends BasePresenter<View>{

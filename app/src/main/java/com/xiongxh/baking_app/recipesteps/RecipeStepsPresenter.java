@@ -101,6 +101,9 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
     }
 
     private void showStepAt(int position){
+
+        mStepView.setBackButton(position != 0);
+        mStepView.setNextButton(position != mRecipe.getSteps().size() - 1);
         mStepView.setStepNumber(mCurrentStep + "/" + mRecipe.getSteps().size());
 
         Step step = mRecipe.getSteps().get(position);

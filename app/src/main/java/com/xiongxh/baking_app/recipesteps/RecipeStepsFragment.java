@@ -77,6 +77,9 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
 
         mRecipeStepsPresenter = new RecipeStepsPresenter(this, recipeId, stepId);
 
+        if (stepId == 0){
+
+        }
         mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
         mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
 
@@ -129,6 +132,16 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     @Override
     public void setStepNumber(String stepNumber){
         mStepNumberTextView.setText(stepNumber);
+    }
+
+    @Override
+    public void setBackButton(boolean existed){
+        mBackButton.setVisibility(existed ? View.VISIBLE : View.INVISIBLE);
+    }
+
+    @Override
+    public void setNextButton(boolean existed) {
+        mNextButton.setVisibility(existed ? View.VISIBLE : View.INVISIBLE);
     }
 
     @Override
