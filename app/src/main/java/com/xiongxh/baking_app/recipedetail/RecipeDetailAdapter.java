@@ -54,11 +54,18 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
 
     @Override
     public void onBindViewHolder(StepViewHolder holder, int position) {
+        if (mSteps == null){
+            return;
+        }
+
         holder.bindStep(mSteps.get(position), position);
     }
 
     @Override
     public int getItemCount() {
+        if (mSteps == null){
+            return 0;
+        }
         return mSteps.size();
     }
 

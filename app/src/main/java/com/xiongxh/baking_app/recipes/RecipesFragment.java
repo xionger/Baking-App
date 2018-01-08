@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.common.base.MoreObjects;
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Recipe;
+import com.xiongxh.baking_app.utils.UiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +57,7 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
                 recipeId -> mRecipesPresenter.openRecipeDetails(recipeId));
 
 
-        mLayoutManager = new GridLayoutManager(getContext(), 1);
+        mLayoutManager = new GridLayoutManager(getContext(), UiUtils.getCoulumnNumber());
         mRecipesRecyclerView.setLayoutManager(mLayoutManager);
 
         mRecipesRecyclerView.setAdapter(mRecipesAdapter);

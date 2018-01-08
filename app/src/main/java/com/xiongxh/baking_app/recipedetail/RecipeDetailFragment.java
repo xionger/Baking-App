@@ -143,14 +143,14 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
             //sb.append(ingredient.toString());
         }
         Timber.d(sb.toString());
-        /*
+        ///*
         IngredientsFormatUtils.setTextWithSpan(mIngredientsView,
                 sb.toString(),
                 ingredientsListHeader,
                 new StyleSpan(Typeface.BOLD));
 
         //Log.d(LOG_TAG, "Recipe ingredients: " + sb.toString());
-        */
+        //*/
         mIngredientsView.setText(sb.toString());
     }
 

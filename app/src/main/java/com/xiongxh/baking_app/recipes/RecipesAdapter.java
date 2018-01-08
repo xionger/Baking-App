@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xiongxh.baking_app.R;
-import com.xiongxh.baking_app.adapter.IngredientAdapter;
 import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.recipedetail.RecipeDetailActivity;
 
@@ -112,9 +111,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             this.mRecipeId = recipe.getId();
 
             mNameView.setText(recipe.getName());
-            mServingsView.setText("Servings: " + String.valueOf(recipe.getServings()));
+            mServingsView.setText("Servings: " + String.valueOf(recipe.getServings()-1));
             mImageView.setImageResource(R.drawable.image_placeholder);
-            mStepsCountView.setText("Steps: " + String.valueOf(recipe.getSteps().size()));
+            mStepsCountView.setText("Steps: " + String.valueOf(recipe.getSteps().size()-1));
         }
     }
 
