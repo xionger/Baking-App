@@ -11,7 +11,10 @@ public class RecipeStepsActivity extends AppCompatActivity {
     private static final String RECIPE_ID_KEY = "RECIPIE_ID";
     private static final String STEP_ID_KEY = "STEP_ID";
 
-    RecipeStepsFragment mRecipeStepsFragment;
+    private static final String FRAGMENT_RECIPEDETAIL = "FRAGMENT_RECIPEDETAIL";
+    private static final String FRAGMENT_STEPS = "FRAGMENT_STEPS";
+
+    RecipeStepsFragment mRecipeStepsFragment = null;
 
     public static Intent prepareIntent(Context context, int recipeId, int stepId){
         Intent intent = new Intent(context, RecipeStepsActivity.class);
@@ -26,14 +29,19 @@ public class RecipeStepsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recipe_steps);
 
         int recipeId = getIntent().getIntExtra(RECIPE_ID_KEY, -1);
-        int stepId = getIntent().getIntExtra(STEP_ID_KEY, -1);
 
-        mRecipeStepsFragment = RecipeStepsFragment.newInstance(recipeId, stepId);
+        if (savedInstanceState == null){
+            int stepId = getIntent().getIntExtra(STEP_ID_KEY, -1);
+            mRecipeStepsFragment = RecipeStepsFragment.newInstance(recipeId, stepId);
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.step_recipe_container, mRecipeStepsFragment)
-                .commit();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.step_recipe_container, mRecipeStepsFragment, FRAGMENT_STEPS)
+                    .commit();
+        }
 
+        if (mRecipeStepsFragment == null){
+            mRecipeStepsFragment = (RecipeStepsFragment) getSupportFragmentManager().findFragmentByTag(FRAGMENT_STEPS);
+        }
     }
 }
