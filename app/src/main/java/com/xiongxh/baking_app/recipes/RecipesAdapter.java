@@ -112,7 +112,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
             mNameView.setText(recipe.getName());
             mServingsView.setText("Servings: " + String.valueOf(recipe.getServings()-1));
-            mImageView.setImageResource(R.drawable.image_placeholder);
+            mImageView.setImageResource(R.drawable.baking_logo);
             mStepsCountView.setText("Steps: " + String.valueOf(recipe.getSteps().size()-1));
         }
     }

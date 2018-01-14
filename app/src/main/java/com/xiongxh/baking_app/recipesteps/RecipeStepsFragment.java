@@ -145,6 +145,11 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     }
 
     @Override
+    public void showRecipeName(String recipeName) {
+        getActivity().setTitle(recipeName);
+    }
+
+    @Override
     public void showErrorMessage(String message){
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }

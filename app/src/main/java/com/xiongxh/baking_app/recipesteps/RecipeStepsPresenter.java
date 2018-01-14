@@ -70,6 +70,7 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
                     public void onSuccess(@NonNull Recipe recipe){
                         mRecipe = recipe;
                         showStepAt(mCurrentStep);
+                        mStepView.showRecipeName(recipe.getName());
                     }
 
                     @Override

@@ -85,17 +85,18 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
 
     class StepViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        //@BindView(R.id.list_step_layout)
-        //RelativeLayout stepItemLayout;
+        @BindView(R.id.list_step_layout)
+        RelativeLayout stepItemLayout;
         @BindView(R.id.tv_step_short_description)
         TextView mShortDescriptionView;
-        //@BindView(R.id.list_step_video_icon) ImageView videoIcon;
-        /*
-        @BindColor(R.color.colorGrayBackground)
+
+        @BindView(R.id.list_step_video_icon) ImageView videoIcon;
+
+        @BindColor(R.color.colorNormalBackground)
         int normalItemBackground;
         @BindColor(R.color.colorPrimaryLight)
         int currentItemBackground;
-        */
+
 
         private int mStepId;
 
@@ -113,7 +114,6 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
 
             mShortDescriptionView.setText(String.format(Locale.US, "%d. %s", mStepId, description));
 
-            /*
             String video = step.getVideoURL();
 
             if (video.isEmpty()) {
@@ -124,10 +124,10 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
 
             if (currentPos == bindPosition) {
                 stepItemLayout.setBackgroundColor(currentItemBackground);
-            } else {
+            }else {
                 stepItemLayout.setBackgroundColor(normalItemBackground);
             }
-            */
+
         }
 
         @Override

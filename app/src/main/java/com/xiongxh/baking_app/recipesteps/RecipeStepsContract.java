@@ -12,6 +12,7 @@ public interface RecipeStepsContract {
         void showErrorMessage(String message);
         void setBackButton(boolean existed);
         void setNextButton(boolean existed);
+        void showRecipeName(String recipeName);
     }
 
     interface Presenter extends BasePresenter<View>{
