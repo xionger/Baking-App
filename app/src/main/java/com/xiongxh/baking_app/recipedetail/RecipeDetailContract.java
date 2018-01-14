@@ -15,6 +15,7 @@ public interface RecipeDetailContract {
         void showIngredients(List<Ingredient> ingredientList);
         void showSteps(List<Step> stepList);
         void showStepDetails(int stepId);
+        void refreshStepContainer(int stepId);
         void showRecipeName(String recipeName);
         void showErrorMessage(String message);
     }
@@ -22,5 +23,6 @@ public interface RecipeDetailContract {
     interface Presenter extends BasePresenter<View>{
         void loadRecipeDetails();
         void openStepDetails(int stepId);
+        void fetchStepData(int stepId);
     }
 }

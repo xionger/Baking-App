@@ -132,7 +132,7 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
 
         @Override
         public void onClick(View view) {
-            //currentPos = mStepId;
+            currentPos = mStepId;
             recipeClickListener.stepClicked(mStepId);
             notifyDataSetChanged();
             /*

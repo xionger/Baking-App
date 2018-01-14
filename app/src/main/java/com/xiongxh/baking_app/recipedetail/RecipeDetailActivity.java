@@ -26,9 +26,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
             mRecipeDetailFragment = RecipeDetailFragment.newInstance(recipeId);
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.detail_recipe_container, mRecipeDetailFragment, FRAGMENT_RECIPEDETAIL)
+                    .replace(R.id.detail_recipe_container, mRecipeDetailFragment)
                     .commit();
 
+/*
             if (UiUtils.isTablet()){
                 mRecipeStepsFragment = RecipeStepsFragment.newInstance(recipeId, 0);
             }
@@ -36,9 +37,10 @@ public class RecipeDetailActivity extends AppCompatActivity {
             if (mRecipeStepsFragment != null){
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.step_recipe_container, mRecipeStepsFragment, FRAGMENT_STEPS)
+                        .replace(R.id.step_recipe_container, mRecipeStepsFragment)
                         .commit();
             }
+*/
         }
     }
 

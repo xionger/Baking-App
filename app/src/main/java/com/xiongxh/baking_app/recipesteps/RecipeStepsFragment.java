@@ -16,6 +16,7 @@ import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Step;
+import com.xiongxh.baking_app.utils.UiUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -102,7 +103,9 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     public void onPause(){
         super.onPause();
         mRecipeStepsPresenter.unsubscribe();
-        mPlayView.getPlayer().release();
+        if (null != mPlayView.getPlayer()) {
+            mPlayView.getPlayer().release();
+        }
     }
 
     @Override
@@ -146,7 +149,9 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
 
     @Override
     public void showRecipeName(String recipeName) {
-        getActivity().setTitle(recipeName);
+        if (!UiUtils.isTablet()) {
+            getActivity().setTitle(recipeName);
+        }
     }
 
     @Override

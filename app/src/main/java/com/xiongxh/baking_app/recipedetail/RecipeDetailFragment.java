@@ -1,7 +1,6 @@
 package com.xiongxh.baking_app.recipedetail;
 
 import android.graphics.Typeface;
-import android.icu.text.LocaleDisplayNames;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,9 +19,10 @@ import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Ingredient;
 import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
-import com.xiongxh.baking_app.recipes.RecipesContract;
 import com.xiongxh.baking_app.recipesteps.RecipeStepsActivity;
+import com.xiongxh.baking_app.recipesteps.RecipeStepsFragment;
 import com.xiongxh.baking_app.utils.IngredientsFormatUtils;
+import com.xiongxh.baking_app.utils.UiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +39,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
     private static final String RECIPE_ID_KEY = "RECIPIE_ID";
     private int mRecipeId;
+    private int mStepId = 0;
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
     private RecipeDetailAdapter mRecipeDetailAdapter;
     private Unbinder unbinder;
@@ -82,6 +82,8 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mStepsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                         DividerItemDecoration.VERTICAL));
 
+
+
         Log.d(LOG_TAG, "Before returning rootview of details ....");
 
         return rootView;
@@ -93,6 +95,10 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         Log.d(LOG_TAG, "Entering onActivityCreated...");
         mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
         mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
+
+        if (UiUtils.isTablet()){
+            mRecipeDetailPresenter.fetchStepData(mStepId);
+        }
         Log.d(LOG_TAG, "Exiting onActivityCreated...");
     }
 
@@ -161,11 +167,38 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
     @Override
     public void showStepDetails(int stepId){
-        startActivity(RecipeStepsActivity.prepareIntent(getContext(), mRecipeId, stepId));
+        mStepId = stepId;
+
+        if (UiUtils.isTablet()){
+            mRecipeDetailPresenter.fetchStepData(stepId);
+            /*
+            RecipeStepsFragment mRecipeStepsFragment = RecipeStepsFragment.newInstance(mRecipeId, stepId);
+
+            getChildFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.step_recipe_container, mRecipeStepsFragment)
+                    .commit();
+                    */
+        } else {
+            startActivity(RecipeStepsActivity.prepareIntent(getContext(), mRecipeId, stepId));
+        }
     }
+
+
+    @Override
+    public void refreshStepContainer(int stepId) {
+        RecipeStepsFragment mRecipeStepsFragment = RecipeStepsFragment.newInstance(mRecipeId, stepId);
+
+        getChildFragmentManager()
+                .beginTransaction()
+                .replace(R.id.step_recipe_container, mRecipeStepsFragment)
+                .commit();
+    }
+
 
     @Override
     public void showErrorMessage(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
     }
+
 }
