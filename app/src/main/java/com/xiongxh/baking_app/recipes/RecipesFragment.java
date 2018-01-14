@@ -141,4 +141,9 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         mRecipesPresenter.unsubscribe();
         unbinder.unbind();
     }
+
+    @Override
+    public RecipesContract.Presenter getPresenter(){
+        return mRecipesPresenter;
+    }
 }

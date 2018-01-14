@@ -99,13 +99,12 @@ public class RecipesPresenter implements RecipesContract.Presenter{
         mDisposableRecipes.add(disposableRecipes);
     }
 
-    /*
     @Override
     public void syncData(){
         BakingApp.get().recipePreferences.setRecipesSynced(false);
         loadRecipes();
     }
-    */
+
     /*
     @Override
     public void loadRecipes(boolean forceUpdate) {

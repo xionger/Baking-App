@@ -13,6 +13,8 @@ public interface RecipesContract {
         void showLoadingRecipesErrorMessage(String error);
         void showLoadingRecipesCompletedMessage();
         void showRecipeDetails(long recipeId);
+
+        Presenter getPresenter();
     }
 
     interface Presenter extends BasePresenter<View> {
@@ -20,7 +22,7 @@ public interface RecipesContract {
         void loadRecipes();
         void openRecipeDetails(int recipeId);
 
-        //void syncData();
+        void syncData();
 
         //ArrayList<Recipe> getLoadRecipes();
 

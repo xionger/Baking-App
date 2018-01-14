@@ -78,9 +78,6 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
 
         mRecipeStepsPresenter = new RecipeStepsPresenter(this, recipeId, stepId);
 
-        if (stepId == 0){
-
-        }
         mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
         mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
 

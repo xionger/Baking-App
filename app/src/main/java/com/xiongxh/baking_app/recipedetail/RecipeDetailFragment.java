@@ -38,6 +38,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     private static final String LOG_TAG = RecipeDetailFragment.class.getSimpleName();
 
     private static final String RECIPE_ID_KEY = "RECIPIE_ID";
+    private static final String STEP_ID_KEY = "STEP_ID";
     private int mRecipeId;
     private int mStepId = 0;
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
@@ -82,8 +83,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mStepsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                         DividerItemDecoration.VERTICAL));
 
-
-
         Log.d(LOG_TAG, "Before returning rootview of details ....");
 
         return rootView;
@@ -97,10 +96,19 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
 
         if (UiUtils.isTablet()){
+            //mStepId = getArguments().getInt(STEP_ID_KEY, 0);
             mRecipeDetailPresenter.fetchStepData(mStepId);
         }
         Log.d(LOG_TAG, "Exiting onActivityCreated...");
     }
+
+    /*
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+        outState.putInt(STEP_ID_KEY, mStepId);
+        super.onSaveInstanceState(outState);
+    }
+    */
 
     @Override
     public void onResume(){
@@ -187,6 +195,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
     @Override
     public void refreshStepContainer(int stepId) {
+        mStepId = stepId;
         RecipeStepsFragment mRecipeStepsFragment = RecipeStepsFragment.newInstance(mRecipeId, stepId);
 
         getChildFragmentManager()

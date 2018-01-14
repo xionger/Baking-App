@@ -24,8 +24,8 @@ public class RecipesRepository implements RecipesDataSource {
     }
 
     public boolean isSynced(){
-        //return BakingApp.get().recipePreferences.isRecipesSynced();
-        return false;
+        return BakingApp.get().recipePreferences.isRecipesSynced();
+        //return false;
     }
 
     @Override

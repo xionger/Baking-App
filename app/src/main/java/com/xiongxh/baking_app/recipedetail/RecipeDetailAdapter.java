@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Step;
 import com.xiongxh.baking_app.recipesteps.RecipeStepsActivity;
+import com.xiongxh.baking_app.utils.UiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +26,6 @@ import butterknife.ButterKnife;
 import timber.log.Timber;
 
 public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapter.StepViewHolder>{
-    private static final String RECIPE_ID_KEY = "RECIPIE_ID";
-    private static final String STEP_ID_KEY = "STEP_ID";
 
     private List<Step> mSteps = new ArrayList<>();
 
@@ -122,7 +121,7 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
                 videoIcon.setVisibility(View.VISIBLE);
             }
 
-            if (currentPos == bindPosition) {
+            if (currentPos == bindPosition && UiUtils.isTablet()) {
                 stepItemLayout.setBackgroundColor(currentItemBackground);
             }else {
                 stepItemLayout.setBackgroundColor(normalItemBackground);
@@ -135,14 +134,6 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
             currentPos = mStepId;
             recipeClickListener.stepClicked(mStepId);
             notifyDataSetChanged();
-            /*
-            Context context = view.getContext();
-            Intent intent = new Intent(context, RecipeStepsActivity.class);
-            //intent.putExtra(RECIPE_ID_KEY, mRecipeId);
-            intent.putExtra(STEP_ID_KEY, mStepId);
-            Timber.d("Step ID: " + mStepId);
-            context.startActivity(intent);
-            */
         }
     }
 

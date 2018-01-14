@@ -78,7 +78,7 @@ public class RecipesActivity extends AppCompatActivity {
         int id =  item.getItemId();
 
         if (id == R.id.action_refresh){
-            mRecipesPresenter.loadRecipes();
+            mRecipesFragment.getPresenter().syncData();
             return true;
         }
 
