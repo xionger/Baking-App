@@ -101,8 +101,14 @@ public class RecipesPresenter implements RecipesContract.Presenter{
 
     @Override
     public void syncData(){
+        Timber.d("Set syncData to FALSE.");
         BakingApp.get().recipePreferences.setRecipesSynced(false);
         loadRecipes();
+    }
+
+    @Override
+    public void openRecipeDetails(int recipeId) {
+        mRecipesView.showRecipeDetails(recipeId);
     }
 
     /*
@@ -159,9 +165,6 @@ public class RecipesPresenter implements RecipesContract.Presenter{
         mDisposableRecipes.add(disposableRecipe);
     }*/
 
-    @Override
-    public void openRecipeDetails(int recipeId) {
-        mRecipesView.showRecipeDetails(recipeId);
-    }
+
 
 }

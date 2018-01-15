@@ -78,7 +78,7 @@ public class Ingredient {
     public void setIngredient(String ingredient) {
         this.ingredient = ingredient;
     }
-
+/*
     @Override
     public String toString() {
         return "Ingredient{" +
@@ -87,4 +87,5 @@ public class Ingredient {
                 ", ingredient='" + ingredient + '\'' +
                 '}';
     }
+    */
 }

@@ -44,6 +44,7 @@ public class Recipe {
     @Ignore
     private List<Step> steps = null; // new ArrayList<>();
 
+    /*
     public Recipe(){}
 
     public Recipe(Integer id, String name, String image, Integer servings, List<Ingredient> ingredients, List<Step> steps){
@@ -55,7 +56,7 @@ public class Recipe {
         this.ingredients = ingredients;
         this.steps = steps;
     }
-
+*/
     public Integer getId() {
         return id;
     }
@@ -104,6 +105,7 @@ public class Recipe {
         this.steps = steps;
     }
 
+    /*
     @Override
     public String toString() {
         return "Recipe{" +
@@ -115,4 +117,5 @@ public class Recipe {
                 ", image='" + image + '\'' +
                 '}';
     }
+    */
 }

@@ -46,7 +46,7 @@ public class Step {
     @SerializedName("thumbnailURL")
     @Expose
     private String thumbnailURL;
-
+/*
     public Step(){}
 
     public Step(Integer idx, String description, String shortdescription, String videoURL, String thumbnailURL){
@@ -57,7 +57,7 @@ public class Step {
         this.videoURL = videoURL;
         this.thumbnailURL = thumbnailURL;
     }
-
+*/
     public int getId(){
         return _id;
     }
@@ -108,7 +108,7 @@ public class Step {
         this.thumbnailURL = thumbnailURL;
     }
 
-
+/*
     @Override
     public String toString() {
         return "Step{" +
@@ -119,4 +119,5 @@ public class Step {
                 ", thumbnailURL='" + thumbnailURL + '\'' +
                 '}';
     }
+    */
 }

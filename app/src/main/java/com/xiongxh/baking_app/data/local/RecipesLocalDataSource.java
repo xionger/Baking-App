@@ -20,9 +20,9 @@ public class RecipesLocalDataSource implements RecipesDataSource {
         mRecipesDao = BakingApp.get().database.recipesDao();
     }
 
-    //public RecipesLocalDataSource(RecipesDao dao){
-    //    this.mRecipesDao = dao;
-    //}
+    public RecipesLocalDataSource(RecipesDao dao){
+        this.mRecipesDao = dao;
+    }
 
     private Observable<Recipe> getIngredientsAndSteps(Recipe recipe){
         return Observable.just(recipe).map(recipe1 -> {

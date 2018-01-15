@@ -30,12 +30,22 @@ public class RecipesInteractor {
             return mRecipesRepository.getRecipes().compose(RxScheduler.applySchedulersSingle());
         }
 
+        /*
         return mRecipesRepository.getRecipes()
                 .flattenAsObservable(recipes -> recipes)
                 //.flatMap(recipe -> Observable.just(recipe).subscribeOn(Scheduler.io()))
                 .toList()
                 .doOnSuccess(recipes -> {
                     Timber.d("Saving recipe list inte the database");
+                    mRecipesRepository.setRecipes(recipes);
+                    BakingApp.get().recipePreferences.setRecipesSynced(true);
+                })
+                .compose(RxScheduler.applySchedulersSingle());
+                */
+
+        return mRecipesRepository.getRecipes()
+                .doOnSuccess(recipes -> {
+                    Timber.d("Saving recipe list into the database");
                     mRecipesRepository.setRecipes(recipes);
                     BakingApp.get().recipePreferences.setRecipesSynced(true);
                 })
