@@ -32,7 +32,14 @@
                 android:resource="@xml/baking_ingredient_widget_info" />
         </receiver>
 
-        <activity android:name=".widget.IngredientWidgetActivity"></activity>
+        <activity android:name=".widget.IngredientWidgetActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".widget.IngredientWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
     </application>
 
 </manifest>

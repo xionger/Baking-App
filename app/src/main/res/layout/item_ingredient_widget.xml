@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp">
+
+    <TextView
+        android:id="@+id/ingredient_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingredient Name"
+        android:layout_weight="1"
+        android:textSize="18sp"
+        android:textColor="@color/colorWidgetLight"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:minWidth="40sp"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:textColor="@color/colorWidgetLight" />
+        <TextView
+            android:id="@+id/measure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CUP"
+            android:minWidth="60sp"
+            android:textSize="14sp"
+            android:textColor="@color/colorWidgetLight"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

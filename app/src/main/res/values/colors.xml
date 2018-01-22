@@ -5,4 +5,6 @@
     <color name="colorPrimaryLight">#81C784</color>
     <color name="colorAccent">#F57C00</color>
     <color name="colorNormalBackground">#E8F5E9</color>
+    <color name="colorWidgetDark">#5D4037</color>
+    <color name="colorWidgetLight">#795548</color>
 </resources>

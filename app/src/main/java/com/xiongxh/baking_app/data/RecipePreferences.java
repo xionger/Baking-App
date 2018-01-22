@@ -30,6 +30,7 @@ public class RecipePreferences {
                 appPreferences = context.getSharedPreferences(PREF_APP, Context.MODE_PRIVATE);
                 break;
             case PREF_WIDGET:
+                Timber.d("case PREF_WIDGET.....");
                 widgetPrefences = context.getSharedPreferences(PREF_WIDGET, Context.MODE_PRIVATE);
                 break;
         }
@@ -55,10 +56,12 @@ public class RecipePreferences {
     }*/
 
     public void setWidget(int widgetId, int recipeId){
+        Timber.d("Entering setWidget, widgetId: " + widgetId + " , recipeId: " + recipeId);
         widgetPrefences.edit().putInt(WIDGET_PREFIX + widgetId, recipeId).apply();
     }
 
     public int getWidet(int widgetId){
+        Timber.d("Entering getWidget, widgetId: " + widgetId);
         return widgetPrefences.getInt(WIDGET_PREFIX + widgetId, -1);
     }
 

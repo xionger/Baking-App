@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.common.base.MoreObjects;
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Recipe;
+import com.xiongxh.baking_app.recipedetail.RecipeDetailActivity;
 import com.xiongxh.baking_app.utils.UiUtils;
 
 import java.util.ArrayList;
@@ -52,10 +53,12 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         View rootView = inflater.inflate(R.layout.fragment_list_recipe, container, false);
         unbinder = ButterKnife.bind(this, rootView);
 
-        //mRecipesAdapter = new RecipesAdapter();
-        mRecipesAdapter = new RecipesAdapter(new ArrayList<>(0),
-                recipeId -> mRecipesPresenter.openRecipeDetails(recipeId));
 
+        mRecipesAdapter = new RecipesAdapter(
+                recipe -> RecipeDetailActivity.onStartActivity(getContext(), recipe.getId()));
+
+        //mRecipesAdapter = new RecipesAdapter(new ArrayList<>(0),
+         //       recipeId -> mRecipesPresenter.openRecipeDetails(recipeId));
 
         mLayoutManager = new GridLayoutManager(getContext(), UiUtils.getCoulumnNumber());
         mRecipesRecyclerView.setLayoutManager(mLayoutManager);

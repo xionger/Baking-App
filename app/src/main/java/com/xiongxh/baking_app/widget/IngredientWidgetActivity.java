@@ -1,5 +1,6 @@
 package com.xiongxh.baking_app.widget;
 
+import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.arch.persistence.room.Room;
 import android.content.Context;
@@ -27,14 +28,19 @@ import butterknife.ButterKnife;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableSingleObserver;
+import timber.log.Timber;
 
-public class IngredientWidgetActivity extends AppCompatActivity {
-
+public class IngredientWidgetActivity extends Activity implements RecipesAdapter.OnRecipeClickListener{
+//public class IngredientWidgetActivity extends Activity{
     @BindView(R.id.rv_widget_ingredient)
     RecyclerView mIngredientRecyclerView;
 
     int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
     CompositeDisposable compositeDisposable = new CompositeDisposable();
+
+    public IngredientWidgetActivity(){
+        super();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,15 +54,22 @@ public class IngredientWidgetActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
 
         if (extras != null){
-            mAppWidgetId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
+            Timber.d("extras not null ...");
+            mAppWidgetId = extras
+                    .getInt(AppWidgetManager.EXTRA_APPWIDGET_ID,
+                            AppWidgetManager.INVALID_APPWIDGET_ID);
         }
 
         if (mAppWidgetId == AppWidgetManager.INVALID_APPWIDGET_ID){
+            Timber.d("mAppWidgetId is INVALID_APPWIDGET_ID");
             finish();
             return;
         }
 
         mIngredientRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecipesAdapter recipesAdapter = new RecipesAdapter(this);
+
+        /*
         RecipesAdapter recipesAdapter =
                 new RecipesAdapter(new ArrayList<>(), new RecipesAdapter.OnRecipeClickListener() {
             @Override
@@ -86,7 +99,7 @@ public class IngredientWidgetActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+*/
         mIngredientRecyclerView.setAdapter(recipesAdapter);
 
         compositeDisposable
@@ -108,5 +121,37 @@ public class IngredientWidgetActivity extends AppCompatActivity {
     protected void onPause(){
         super.onPause();
         compositeDisposable.clear();
+    }
+
+    @Override
+    public void onClick(Recipe recipe) {
+        Timber.d("entering onClick ..., recipeId: " + recipe.getId());
+
+        BakingApp.get().recipePreferences.setWidget(mAppWidgetId, recipe.getId());
+
+        Timber.d("mAppWidgetId: " + mAppWidgetId);
+
+        final Context context = IngredientWidgetActivity.this;
+
+        RecipesDatabase database = Room.
+                databaseBuilder(context, RecipesDatabase.class, RecipesDbContract.DATABASE_NAME)
+                .build();
+
+        RecipePreferences widgetPrefs =
+                new RecipePreferences(context, RecipePreferences.PREF_WIDGET);
+
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+
+        BakingIngredientWidget
+                .updateAppWidget(context,
+                        appWidgetManager,
+                        mAppWidgetId,
+                        database,
+                        widgetPrefs.getWidet(mAppWidgetId));
+
+        Intent result = new Intent();
+        result.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, mAppWidgetId);
+        setResult(RESULT_OK, result);
+        finish();
     }
 }

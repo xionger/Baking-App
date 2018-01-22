@@ -1,5 +1,7 @@
 package com.xiongxh.baking_app.recipedetail;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -42,6 +44,12 @@ public class RecipeDetailActivity extends AppCompatActivity {
             }
 */
         }
+    }
+
+    public static void onStartActivity(Context context, int recipeId){
+        context.startActivity(
+                new Intent(context, RecipeDetailActivity.class)
+                        .putExtra(RECIPE_KEY, recipeId));
     }
 
 }

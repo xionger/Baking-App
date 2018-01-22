@@ -30,15 +30,23 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
     private List<Recipe> mRecipes = new ArrayList<>();
 
-    final OnRecipeClickListener mRecipeClickListener;
-    public interface OnRecipeClickListener{
-        void recipeClicked(int recipeId);
-    }
+    private OnRecipeClickListener mRecipeClickListener;
 
-    public RecipesAdapter(List<Recipe> recipes, OnRecipeClickListener recipeClickListener){
-        setRecipes(recipes);
-        this.mRecipeClickListener = recipeClickListener;
+    public interface OnRecipeClickListener{
+        //void recipeClicked(int recipeId);
+        void onClick(Recipe recipe);
     }
+    /*
+        public RecipesAdapter(List<Recipe> recipes, OnRecipeClickListener recipeClickListener){
+            setRecipes(recipes);
+            this.mRecipeClickListener = recipeClickListener;
+        }
+
+        */
+        public RecipesAdapter(OnRecipeClickListener recipeClickListener) {
+            //setRecipes(recipes);
+            this.mRecipeClickListener = recipeClickListener;
+        }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -52,6 +60,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     public void onBindViewHolder(ViewHolder holder, int position) {
         Recipe recipe = mRecipes.get(position);
         holder.bindRecipe(recipe);
+        holder.itemView.setOnClickListener(view -> mRecipeClickListener.onClick(recipe));
     }
 
     @Override
@@ -75,7 +84,8 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         this.mRecipes = recipes;
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    class ViewHolder extends RecyclerView.ViewHolder{
+    //class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final String LOG_TAG = ViewHolder.class.getCanonicalName();
         //TextView mServingsView, mStepsCountView, mNameView;
         //RecyclerView mIngredientsView;
@@ -93,9 +103,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             super(itemView);
             ButterKnife.bind(this, itemView);
 
-            itemView.setOnClickListener(this);
+            //itemView.setOnClickListener(this);
         }
 
+        /*
         @Override
         public void onClick(View view) {
             mRecipeClickListener.recipeClicked(mRecipeId);
@@ -105,6 +116,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             Log.d(LOG_TAG, "Recipe ID: " + mRecipeId);
             context.startActivity(intent);
         }
+        */
 
         public void bindRecipe(final Recipe recipe){
             this.mRecipe = recipe;
