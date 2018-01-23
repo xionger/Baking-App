@@ -46,7 +46,7 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
     @Override
     public StepViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_recipe_detail, parent, false);
+                .inflate(R.layout.item_step_detail, parent, false);
 
         return new StepViewHolder(view);
     }

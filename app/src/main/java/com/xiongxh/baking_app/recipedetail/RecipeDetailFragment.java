@@ -1,5 +1,6 @@
 package com.xiongxh.baking_app.recipedetail;
 
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,14 +47,17 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     private RecipeDetailAdapter mRecipeDetailAdapter;
     private Unbinder unbinder;
 
-    @BindView(R.id.tv_recipe_detail_ingredients)
-    TextView mIngredientsView;
+    //@BindView(R.id.tv_recipe_detail_ingredients)
+    //TextView mIngredientsView;
 
     @BindView(R.id.rv_steps_recipe)
     RecyclerView mStepsRecyclerView;
 
-    @BindString(R.string.details_ingredients_header)
-    String ingredientsListHeader;
+    //@BindString(R.string.details_ingredients_header)
+    //String ingredientsListHeader;
+
+    @BindView(R.id.layout_ingredients)
+    LinearLayout mIngredientsLayout;
 
     public RecipeDetailFragment(){}
 
@@ -139,6 +144,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         getActivity().setTitle(recipeName);
     }
 
+    /*
     @Override
     public void showIngredients(List<Ingredient> ingredientList) {
         StringBuilder sb = new StringBuilder();
@@ -154,19 +160,27 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
             sb.append(IngredientsFormatUtils.formatIngredient(getContext(), name, quantity, measure));
 
-            //sb.append(ingredient.toString());
         }
         Timber.d(sb.toString());
-        ///*
+
         IngredientsFormatUtils.setTextWithSpan(mIngredientsView,
                 sb.toString(),
                 ingredientsListHeader,
                 new StyleSpan(Typeface.BOLD));
 
-        //Log.d(LOG_TAG, "Recipe ingredients: " + sb.toString());
-        //*/
         mIngredientsView.setText(sb.toString());
     }
+    */
+
+    @Override
+    public void showIngredients(List<Ingredient> ingredientList) {
+        mIngredientsLayout.removeAllViews();
+        for (Ingredient ingredient : ingredientList){
+            IngredientsView ingredientsView = new IngredientsView(getContext());
+            mIngredientsLayout.addView(ingredientsView.bind(ingredient));
+        }
+    }
+
 
     @Override
     public void showSteps(List<Step> stepList) {
@@ -208,6 +222,27 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     @Override
     public void showErrorMessage(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    public class IngredientsView extends LinearLayout {
+        @BindView(R.id.ingredient_name) TextView mIngredientNameView;
+        @BindView(R.id.ingredient_quantity) TextView mIngredientQuantityView;
+        @BindView(R.id.ingredient_measure) TextView mIngredientMeasure;
+
+        public IngredientsView(Context context){
+            super(context);
+
+            View ingredientView = inflate(getContext(), R.layout.view_ingredient_item, this);
+            ButterKnife.bind(ingredientView, this);
+        }
+
+        public View bind(Ingredient ingredient){
+            mIngredientNameView.setText(ingredient.getIngredient());
+            mIngredientQuantityView.setText(String.valueOf(ingredient.getQuantity()));
+            mIngredientMeasure.setText(ingredient.getMeasure());
+
+            return this;
+        }
     }
 
 }

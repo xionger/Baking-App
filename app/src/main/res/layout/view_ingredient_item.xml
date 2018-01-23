@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:minWidth="40sp"
+            android:gravity="center"
+            android:textSize="@dimen/item_text_size"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:id="@+id/ingredient_quantity" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CUP"
+            android:minWidth="60sp"
+            android:textSize="@dimen/item_text_size"
+            android:textColor="#000"
+            android:gravity="center"
+            android:id="@+id/ingredient_measure" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Graham Cracker crumbs"
+            android:layout_weight="1"
+            android:textSize="@dimen/item_text_size"
+            android:textColor="#000"
+            android:paddingRight="8dp"
+            android:paddingLeft="8dp"
+            android:id="@+id/ingredient_name" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+</LinearLayout>
