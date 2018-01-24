@@ -40,7 +40,6 @@ public class BakingApp extends Application{
                 .build();
 
         recipePreferences = new RecipePreferences(this);
-        recipePreferences.setRecipesSynced(false);
     }
 
 }

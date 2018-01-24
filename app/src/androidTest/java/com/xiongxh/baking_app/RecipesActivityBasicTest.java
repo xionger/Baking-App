@@ -47,7 +47,7 @@ public class RecipesActivityBasicTest {
     public void onClickRecyclerViewRecipeItem_opensRecipeDetailsActivity() {
 
         onView(ViewMatchers.withId(R.id.rv_list_recipe))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(1, click()));
 
         onView(ViewMatchers.withId(R.id.rv_steps_recipe))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));

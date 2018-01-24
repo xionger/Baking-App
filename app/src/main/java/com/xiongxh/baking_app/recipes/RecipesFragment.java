@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.xiongxh.baking_app.R;
+import com.xiongxh.baking_app.data.RecipePreferences;
 import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.recipedetail.RecipeDetailActivity;
 import com.xiongxh.baking_app.utils.UiUtils;
@@ -21,6 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import timber.log.Timber;
 
 public class RecipesFragment extends Fragment implements RecipesContract.View{
 
@@ -99,6 +101,11 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
 
     @Override
     public void showRecipeList(List<Recipe> recipeList) {
+        if (recipeList.size() <= 0){
+            RecipePreferences recipePreferences = new RecipePreferences(getContext());
+            recipePreferences.setRecipesSynced(false);
+            mRecipesPresenter.subscribe(this);
+        }
         mRecipesAdapter.refreshRecipes(recipeList);
     }
 
