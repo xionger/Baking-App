@@ -2,7 +2,6 @@ package com.xiongxh.baking_app.data.bean;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
@@ -36,17 +35,6 @@ public class Ingredient {
     @Expose
     private String ingredient;
 
-    /*
-    public Ingredient(){}
-
-    public Ingredient(String ingredient, String measure, Double quantity){
-        super();
-        this.ingredient = ingredient;
-        this.measure = measure;
-        this.quantity = quantity;
-    }
-    */
-
     public int getId() { return id; }
 
     public void setId(int id){ this.id = id; }
@@ -78,14 +66,5 @@ public class Ingredient {
     public void setIngredient(String ingredient) {
         this.ingredient = ingredient;
     }
-/*
-    @Override
-    public String toString() {
-        return "Ingredient{" +
-                "quantity=" + quantity +
-                ", measure='" + measure + '\'' +
-                ", ingredient='" + ingredient + '\'' +
-                '}';
-    }
-    */
+
 }

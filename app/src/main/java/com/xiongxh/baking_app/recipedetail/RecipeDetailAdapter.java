@@ -1,7 +1,5 @@
 package com.xiongxh.baking_app.recipedetail;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +11,6 @@ import android.widget.TextView;
 
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Step;
-import com.xiongxh.baking_app.recipesteps.RecipeStepsActivity;
 import com.xiongxh.baking_app.utils.UiUtils;
 
 import java.util.ArrayList;
@@ -23,7 +20,6 @@ import java.util.Locale;
 import butterknife.BindColor;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import timber.log.Timber;
 
 public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapter.StepViewHolder>{
 

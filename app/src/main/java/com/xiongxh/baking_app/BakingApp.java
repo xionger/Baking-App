@@ -5,9 +5,7 @@ import android.arch.persistence.room.Room;
 
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
-import com.squareup.leakcanary.LeakCanary;
 import com.xiongxh.baking_app.api.RecipeApiService;
-import com.xiongxh.baking_app.base.PresenterProvider;
 import com.xiongxh.baking_app.data.RecipePreferences;
 import com.xiongxh.baking_app.data.local.RecipesDatabase;
 import com.xiongxh.baking_app.data.local.RecipesDbContract;
@@ -21,7 +19,6 @@ public class BakingApp extends Application{
     public OkHttpClient client = new OkHttpClient();
 
     public RecipesDatabase database;
-    public PresenterProvider presenterProvider;
     public RecipePreferences recipePreferences;
 
     public static BakingApp get(){ return INSTANCE; }
@@ -30,13 +27,6 @@ public class BakingApp extends Application{
     public void onCreate(){
         super.onCreate();
 
-        /*
-        if (LeakCanary.isInAnalyzerProcess(this)){
-            return;
-        }
-
-        LeakCanary.install(this);
-        */
         INSTANCE = this;
 
         Timber.plant(new Timber.DebugTree());
@@ -50,8 +40,7 @@ public class BakingApp extends Application{
                 .build();
 
         recipePreferences = new RecipePreferences(this);
-
-        //presenterProvider = new PresenterProvider();
+        recipePreferences.setRecipesSynced(false);
     }
 
 }

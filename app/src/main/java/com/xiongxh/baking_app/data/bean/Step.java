@@ -3,7 +3,6 @@ package com.xiongxh.baking_app.data.bean;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
 import com.google.gson.annotations.Expose;
@@ -46,18 +45,7 @@ public class Step {
     @SerializedName("thumbnailURL")
     @Expose
     private String thumbnailURL;
-/*
-    public Step(){}
 
-    public Step(Integer idx, String description, String shortdescription, String videoURL, String thumbnailURL){
-        super();
-        this.idx = idx;
-        this.description = description;
-        this.shortDescription = shortdescription;
-        this.videoURL = videoURL;
-        this.thumbnailURL = thumbnailURL;
-    }
-*/
     public int getId(){
         return _id;
     }
@@ -108,16 +96,4 @@ public class Step {
         this.thumbnailURL = thumbnailURL;
     }
 
-/*
-    @Override
-    public String toString() {
-        return "Step{" +
-                "id=" + idx +
-                ", shortDescription='" + shortDescription + '\'' +
-                ", description='" + description + '\'' +
-                ", videoURL='" + videoURL + '\'' +
-                ", thumbnailURL='" + thumbnailURL + '\'' +
-                '}';
-    }
-    */
 }

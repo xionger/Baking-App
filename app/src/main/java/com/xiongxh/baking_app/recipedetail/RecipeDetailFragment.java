@@ -1,14 +1,12 @@
 package com.xiongxh.baking_app.recipedetail;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,13 +21,11 @@ import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
 import com.xiongxh.baking_app.recipesteps.RecipeStepsActivity;
 import com.xiongxh.baking_app.recipesteps.RecipeStepsFragment;
-import com.xiongxh.baking_app.utils.IngredientsFormatUtils;
 import com.xiongxh.baking_app.utils.UiUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -37,24 +33,15 @@ import timber.log.Timber;
 
 public class RecipeDetailFragment extends Fragment implements RecipeDetailContract.View{
 
-    private static final String LOG_TAG = RecipeDetailFragment.class.getSimpleName();
-
     private static final String RECIPE_ID_KEY = "RECIPIE_ID";
-    private static final String STEP_ID_KEY = "STEP_ID";
     private int mRecipeId;
     private int mStepId = 0;
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
     private RecipeDetailAdapter mRecipeDetailAdapter;
     private Unbinder unbinder;
 
-    //@BindView(R.id.tv_recipe_detail_ingredients)
-    //TextView mIngredientsView;
-
     @BindView(R.id.rv_steps_recipe)
     RecyclerView mStepsRecyclerView;
-
-    //@BindString(R.string.details_ingredients_header)
-    //String ingredientsListHeader;
 
     @BindView(R.id.layout_ingredients)
     LinearLayout mIngredientsLayout;
@@ -88,32 +75,19 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mStepsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                         DividerItemDecoration.VERTICAL));
 
-        Log.d(LOG_TAG, "Before returning rootview of details ....");
-
         return rootView;
     }
 
     @Override
     public void onActivityCreated(@NonNull Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        Log.d(LOG_TAG, "Entering onActivityCreated...");
         mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
         mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
 
         if (UiUtils.isTablet()){
-            //mStepId = getArguments().getInt(STEP_ID_KEY, 0);
             mRecipeDetailPresenter.fetchStepData(mStepId);
         }
-        Log.d(LOG_TAG, "Exiting onActivityCreated...");
     }
-
-    /*
-    @Override
-    public void onSaveInstanceState(Bundle outState){
-        outState.putInt(STEP_ID_KEY, mStepId);
-        super.onSaveInstanceState(outState);
-    }
-    */
 
     @Override
     public void onResume(){
@@ -135,7 +109,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
     @Override
     public void showRecipeDetails(Recipe recipe) {
-        Log.d(LOG_TAG, "Recipe name: " + recipe.getName());
+        Timber.d("Recipe name: " + recipe.getName());
     }
 
 
@@ -143,34 +117,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     public void showRecipeName(String recipeName) {
         getActivity().setTitle(recipeName);
     }
-
-    /*
-    @Override
-    public void showIngredients(List<Ingredient> ingredientList) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(ingredientsListHeader);
-
-        for (Ingredient ingredient : ingredientList) {
-
-            String name = ingredient.getIngredient();
-            double quantity = ingredient.getQuantity();
-            String measure = ingredient.getMeasure();
-
-            sb.append("\n");
-
-            sb.append(IngredientsFormatUtils.formatIngredient(getContext(), name, quantity, measure));
-
-        }
-        Timber.d(sb.toString());
-
-        IngredientsFormatUtils.setTextWithSpan(mIngredientsView,
-                sb.toString(),
-                ingredientsListHeader,
-                new StyleSpan(Typeface.BOLD));
-
-        mIngredientsView.setText(sb.toString());
-    }
-    */
 
     @Override
     public void showIngredients(List<Ingredient> ingredientList) {
@@ -193,14 +139,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
         if (UiUtils.isTablet()){
             mRecipeDetailPresenter.fetchStepData(stepId);
-            /*
-            RecipeStepsFragment mRecipeStepsFragment = RecipeStepsFragment.newInstance(mRecipeId, stepId);
-
-            getChildFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.step_recipe_container, mRecipeStepsFragment)
-                    .commit();
-                    */
         } else {
             startActivity(RecipeStepsActivity.prepareIntent(getContext(), mRecipeId, stepId));
         }

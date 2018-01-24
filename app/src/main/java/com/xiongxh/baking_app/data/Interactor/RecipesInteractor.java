@@ -10,9 +10,7 @@ import com.xiongxh.baking_app.rx.RxScheduler;
 
 import java.util.List;
 
-import io.reactivex.Scheduler;
 import io.reactivex.Single;
-import io.reactivex.Observable;
 import timber.log.Timber;
 
 public class RecipesInteractor {
@@ -29,19 +27,6 @@ public class RecipesInteractor {
             Timber.d("Data are updated. Retrieve data from local database.");
             return mRecipesRepository.getRecipes().compose(RxScheduler.applySchedulersSingle());
         }
-
-        /*
-        return mRecipesRepository.getRecipes()
-                .flattenAsObservable(recipes -> recipes)
-                //.flatMap(recipe -> Observable.just(recipe).subscribeOn(Scheduler.io()))
-                .toList()
-                .doOnSuccess(recipes -> {
-                    Timber.d("Saving recipe list inte the database");
-                    mRecipesRepository.setRecipes(recipes);
-                    BakingApp.get().recipePreferences.setRecipesSynced(true);
-                })
-                .compose(RxScheduler.applySchedulersSingle());
-                */
 
         return mRecipesRepository.getRecipes()
                 .doOnSuccess(recipes -> {

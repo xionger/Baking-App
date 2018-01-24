@@ -5,6 +5,4 @@ public interface BasePresenter<V> {
 
     void subscribe(V view);
     void unsubscribe();
-    //void start();
-
 }

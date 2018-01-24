@@ -37,26 +37,13 @@ public class Recipe {
     @SerializedName("ingredients")
     @Expose
     @Ignore
-    private List<Ingredient> ingredients = null; // new ArrayList<>();
+    private List<Ingredient> ingredients = null;
 
     @SerializedName("steps")
     @Expose
     @Ignore
-    private List<Step> steps = null; // new ArrayList<>();
+    private List<Step> steps = null;
 
-    /*
-    public Recipe(){}
-
-    public Recipe(Integer id, String name, String image, Integer servings, List<Ingredient> ingredients, List<Step> steps){
-        super();
-        this.id = id;
-        this.name = name;
-        this.image = image;
-        this.servings = servings;
-        this.ingredients = ingredients;
-        this.steps = steps;
-    }
-*/
     public Integer getId() {
         return id;
     }
@@ -105,17 +92,4 @@ public class Recipe {
         this.steps = steps;
     }
 
-    /*
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", ingredients=" + ingredients +
-                ", steps=" + steps +
-                ", servings=" + servings +
-                ", image='" + image + '\'' +
-                '}';
-    }
-    */
 }

@@ -18,17 +18,10 @@ public interface RecipesContract {
     }
 
     interface Presenter extends BasePresenter<View> {
-        //void loadRecipesFromRepository(boolean forceUpdate, RecipesIdlingResource resource);
         void loadRecipes();
         void openRecipeDetails(int recipeId);
 
         void syncData();
-
-        //ArrayList<Recipe> getLoadRecipes();
-
-        //void setFavoriteRecipe(Recipe recipe, int postion);
-
-        //Recipe getRecipeById(long id);
     }
 }
 

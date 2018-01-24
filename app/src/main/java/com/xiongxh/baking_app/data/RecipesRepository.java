@@ -6,10 +6,8 @@ import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
 import com.xiongxh.baking_app.data.local.RecipesLocalDataSource;
 import com.xiongxh.baking_app.data.remote.RecipesRemoteDataSource;
-import com.xiongxh.baking_app.rx.RxScheduler;
 
 import java.util.List;
-import io.reactivex.Observable;
 import io.reactivex.Single;
 import timber.log.Timber;
 
@@ -25,7 +23,6 @@ public class RecipesRepository implements RecipesDataSource {
 
     public boolean isSynced(){
         return BakingApp.get().recipePreferences.isRecipesSynced();
-        //return false;
     }
 
     @Override

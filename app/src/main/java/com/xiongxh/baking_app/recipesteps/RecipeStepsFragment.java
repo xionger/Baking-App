@@ -1,6 +1,5 @@
 package com.xiongxh.baking_app.recipesteps;
 
-
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -8,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +20,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import timber.log.Timber;
-
 
 public class RecipeStepsFragment extends Fragment implements RecipeStepsContract.View {
 
@@ -44,7 +41,6 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     FloatingActionButton mNextButton;
 
     public RecipeStepsFragment() {
-        // Required empty public constructor
     }
 
     public static RecipeStepsFragment newInstance(int recipeId, int stepId){
@@ -55,7 +51,6 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
         fragment.setArguments(args);
         return fragment;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

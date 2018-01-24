@@ -3,7 +3,6 @@ package com.xiongxh.baking_app.recipedetail;
 import com.xiongxh.baking_app.data.Interactor.RecipeInteractor;
 import com.xiongxh.baking_app.data.bean.Recipe;
 
-import io.reactivex.Observable;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -44,7 +43,6 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
     @Override
     public void loadRecipeDetails() {
         Timber.d("Loading recipe detail...");
-        //mRecipeView.showLoadingIndicator(true);
 
         Disposable disposableRecipe = mRecipeInteractor
                 .getRecipeDetail(mRecipeId)
@@ -66,7 +64,6 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
 
         mDisposableRecipe.add(disposableRecipe);
     }
-
 
     @Override
     public void fetchStepData(int stepId) {

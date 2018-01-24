@@ -11,13 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.common.base.MoreObjects;
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.recipedetail.RecipeDetailActivity;
 import com.xiongxh.baking_app.utils.UiUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -57,9 +55,6 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         mRecipesAdapter = new RecipesAdapter(
                 recipe -> RecipeDetailActivity.onStartActivity(getContext(), recipe.getId()));
 
-        //mRecipesAdapter = new RecipesAdapter(new ArrayList<>(0),
-         //       recipeId -> mRecipesPresenter.openRecipeDetails(recipeId));
-
         mLayoutManager = new GridLayoutManager(getContext(), UiUtils.getCoulumnNumber());
         mRecipesRecyclerView.setLayoutManager(mLayoutManager);
 
@@ -89,12 +84,7 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         outState.putInt(SAVED_SCROLL_POSITION, position);
         super.onSaveInstanceState(outState);
     }
-    /*
-        @Override
-        public void setPresenter(RecipesContract.Presenter presenter) {
-            this.mRecipesPresenter = presenter;
-        }
-    */
+
     @Override
     public void onResume(){
         super.onResume();

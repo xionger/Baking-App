@@ -1,6 +1,5 @@
 package com.xiongxh.baking_app.recipedetail;
 
-
 import com.xiongxh.baking_app.base.BasePresenter;
 import com.xiongxh.baking_app.base.BaseView;
 import com.xiongxh.baking_app.data.bean.Ingredient;
