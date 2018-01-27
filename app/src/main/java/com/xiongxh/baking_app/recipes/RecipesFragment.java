@@ -62,7 +62,7 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
 
         mRecipesRecyclerView.setAdapter(mRecipesAdapter);
 
-        mRecipesPresenter = new RecipesPresenter(this);
+        //mRecipesPresenter = new RecipesPresenter(this);
 
         return rootView;
     }
@@ -145,5 +145,10 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
     @Override
     public RecipesContract.Presenter getPresenter(){
         return mRecipesPresenter;
+    }
+
+    @Override
+    public void setPresenter(RecipesContract.Presenter presenter){
+        this.mRecipesPresenter = presenter;
     }
 }

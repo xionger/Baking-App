@@ -6,6 +6,7 @@ import android.arch.persistence.room.Room;
 import com.facebook.stetho.Stetho;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.xiongxh.baking_app.api.RecipeApiService;
+import com.xiongxh.baking_app.base.PresenterProvider;
 import com.xiongxh.baking_app.data.RecipePreferences;
 import com.xiongxh.baking_app.data.local.RecipesDatabase;
 import com.xiongxh.baking_app.data.local.RecipesDbContract;
@@ -20,6 +21,7 @@ public class BakingApp extends Application{
 
     public RecipesDatabase database;
     public RecipePreferences recipePreferences;
+    public PresenterProvider presenterProvider;
 
     public static BakingApp get(){ return INSTANCE; }
 
@@ -40,6 +42,7 @@ public class BakingApp extends Application{
                 .build();
 
         recipePreferences = new RecipePreferences(this);
+        presenterProvider = new PresenterProvider();
     }
 
 }

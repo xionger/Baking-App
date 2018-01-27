@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.xiongxh.baking_app.BakingApp;
 import com.xiongxh.baking_app.IdlingResource.RecipesIdlingResource;
 import com.xiongxh.baking_app.R;
 
@@ -39,6 +40,9 @@ public class RecipesActivity extends AppCompatActivity {
                     .replace(R.id.recipes_fragment_container, (Fragment)mRecipesFragment, TAG_FRAGMENT_RECIPES)
                     .commit();
 
+        RecipesContract.Presenter presenter = BakingApp.get().presenterProvider.provideRecipes();
+
+        mRecipesFragment.setPresenter(presenter);
     }
 
     @Override

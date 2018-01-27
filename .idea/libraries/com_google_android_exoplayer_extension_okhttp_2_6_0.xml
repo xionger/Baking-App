@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.google.android.exoplayer:extension-okhttp-2.6.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.6.0.aar/33b9666dd0c9dd7793d51f28da1daeb8/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.6.0.aar/33b9666dd0c9dd7793d51f28da1daeb8/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.6.0.aar/1db47f16306c98e0d8262200094966c5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/extension-okhttp-2.6.0.aar/1db47f16306c98e0d8262200094966c5/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

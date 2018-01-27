@@ -21,6 +21,7 @@ import com.xiongxh.baking_app.data.bean.Recipe;
 import com.xiongxh.baking_app.data.bean.Step;
 import com.xiongxh.baking_app.recipesteps.RecipeStepsActivity;
 import com.xiongxh.baking_app.recipesteps.RecipeStepsFragment;
+import com.xiongxh.baking_app.recipesteps.StepPageFragment;
 import com.xiongxh.baking_app.utils.UiUtils;
 
 import java.util.ArrayList;
@@ -33,11 +34,13 @@ import timber.log.Timber;
 
 public class RecipeDetailFragment extends Fragment implements RecipeDetailContract.View{
 
-    private static final String RECIPE_ID_KEY = "RECIPIE_ID";
+
     private int mRecipeId;
     private int mStepId = 0;
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
     private RecipeDetailAdapter mRecipeDetailAdapter;
+    private LinearLayoutManager mLayoutManager;
+    private int currentVisiblePosition;
     private Unbinder unbinder;
 
     @BindView(R.id.rv_steps_recipe)
@@ -51,10 +54,20 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     public static RecipeDetailFragment newInstance(int recipeId){
         Bundle args = new Bundle();
         RecipeDetailFragment recipeDetailFragment = new RecipeDetailFragment();
-        args.putInt(RECIPE_ID_KEY, recipeId);
+        args.putInt(RecipeDetailActivity.RECIPE_ID_KEY, recipeId);
         recipeDetailFragment.setArguments(args);
 
         return recipeDetailFragment;
+    }
+
+    @Override
+    public void onCreate(@NonNull Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        mRecipeId = getArguments().getInt(RecipeDetailActivity.RECIPE_ID_KEY);
+
+        if (UiUtils.isTablet()){
+            mRecipeDetailPresenter.fetchStepData(mStepId);
+        }
     }
 
     @Override
@@ -66,9 +79,9 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mRecipeDetailAdapter = new RecipeDetailAdapter(new ArrayList<>(0),
                 stepId -> mRecipeDetailPresenter.openStepDetails(stepId));
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        mLayoutManager = new LinearLayoutManager(getContext());
 
-        mStepsRecyclerView.setLayoutManager(layoutManager);
+        mStepsRecyclerView.setLayoutManager(mLayoutManager);
         mStepsRecyclerView.setHasFixedSize(true);
         mStepsRecyclerView.setAdapter(mRecipeDetailAdapter);
 
@@ -78,27 +91,38 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         return rootView;
     }
 
+    /*
     @Override
     public void onActivityCreated(@NonNull Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
         mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
-        mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
+        //mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
 
         if (UiUtils.isTablet()){
             mRecipeDetailPresenter.fetchStepData(mStepId);
         }
     }
+    */
 
     @Override
     public void onResume(){
         super.onResume();
         mRecipeDetailPresenter.subscribe(this);
+        /*
+        currentVisiblePosition = ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
+                .findFirstCompletelyVisibleItemPosition();
+        currentVisiblePosition = 0;
+        */
     }
 
     @Override
     public void onPause(){
         super.onPause();
+        /*
+        ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
+                .scrollToPosition(currentVisiblePosition);
         mRecipeDetailPresenter.unsubscribe();
+        */
     }
 
     @Override
@@ -140,26 +164,44 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         if (UiUtils.isTablet()){
             mRecipeDetailPresenter.fetchStepData(stepId);
         } else {
+            Timber.d("Open setep page, mRecipeId: " + mRecipeId + ", stepId: " + stepId);
             startActivity(RecipeStepsActivity.prepareIntent(getContext(), mRecipeId, stepId));
         }
     }
 
-
+    /*
     @Override
     public void refreshStepContainer(int stepId) {
         mStepId = stepId;
-        RecipeStepsFragment mRecipeStepsFragment = RecipeStepsFragment.newInstance(mRecipeId, stepId);
+        RecipeStepsFragment mRecipeStepsFragment = RecipeStepsFragment.newInstance(stepId);
 
         getChildFragmentManager()
                 .beginTransaction()
                 .replace(R.id.step_recipe_container, mRecipeStepsFragment)
                 .commit();
     }
-
+*/
 
     @Override
     public void showErrorMessage(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void refreshStepContainer(String desc, String videoUrl, String imageThumbnailUrl) {
+        Timber.d("step description: " + desc);
+        StepPageFragment stepPageFragment =
+                StepPageFragment.newInstance(desc, videoUrl, imageThumbnailUrl);
+
+        getChildFragmentManager()
+                .beginTransaction()
+                .replace(R.id.step_recipe_container, stepPageFragment)
+                .commit();
+    }
+
+    @Override
+    public void setPresenter(RecipeDetailContract.Presenter presenter) {
+        this.mRecipeDetailPresenter = presenter;
     }
 
     public class IngredientsView extends LinearLayout {

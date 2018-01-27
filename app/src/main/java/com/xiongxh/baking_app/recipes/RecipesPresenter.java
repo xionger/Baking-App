@@ -23,9 +23,9 @@ public class RecipesPresenter implements RecipesContract.Presenter{
 
     private CompositeDisposable mDisposableRecipes = new CompositeDisposable();
 
-    public RecipesPresenter(RecipesContract.View view){
+    public RecipesPresenter(){
         mRecipesInteractor = new RecipesInteractor();
-        mRecipesView = view;
+        //mRecipesView = view;
     }
 
     @Override

@@ -32,11 +32,11 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
     private RecipeInteractor mStepInteractor;
     private int mCurrentStep = -1;
 
-    public RecipeStepsPresenter(RecipeStepsContract.View view, int recipeId, int currentStep){
+    public RecipeStepsPresenter(){
         mStepInteractor = new RecipeInteractor();
-        this.mStepView = view;
-        this.mRecipeId = recipeId;
-        this.mCurrentStep = currentStep;
+        //this.mStepView = view;
+        //this.mRecipeId = recipeId;
+        //this.mCurrentStep = currentStep;
     }
 
     @Override
@@ -47,7 +47,8 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
     @Override
     public void subscribe(RecipeStepsContract.View view){
         this.mStepView = view;
-        loadRecipeDetails();
+        //loadRecipeDetails();
+        loadSteps();
     }
 
     @Override
@@ -55,6 +56,38 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
         mCompositeDisposable.clear();
     }
 
+    @Override
+    public void loadSteps() {
+        Timber.d("Loading recipe steps ...");
+
+        Disposable disposableStep = mStepInteractor
+                .getRecipeDetail(mRecipeId)
+                .subscribeWith(new DisposableSingleObserver<Recipe>(){
+                    @Override
+                    public void onSuccess(@NonNull Recipe recipe){
+                        mRecipe = recipe;
+                        Timber.d("step size: " + mRecipe.getSteps().size());
+                        mStepView.showStepsInPager(mRecipe.getSteps());
+                        mStepView.moveToCurrentStepPage();
+                        mStepView.showRecipeName(recipe.getName());
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e){
+                        Timber.e(e);
+                        mStepView.showErrorMessage(e.getMessage());
+                    }
+                });
+
+        mCompositeDisposable.add(disposableStep);
+    }
+
+    @Override
+    public void setRecipeId(int recipeId) {
+        this.mRecipeId = recipeId;
+    }
+
+    /*
     @Override
     public int getCurrentIndex(){
         return mCurrentStep;
@@ -142,4 +175,5 @@ public class RecipeStepsPresenter implements RecipeStepsContract.Presenter {
 
         mStepView.showStep(step, simpleExoPlayer);
     }
+    */
 }

@@ -2,6 +2,7 @@ package com.xiongxh.baking_app.recipedetail;
 
 import com.xiongxh.baking_app.data.Interactor.RecipeInteractor;
 import com.xiongxh.baking_app.data.bean.Recipe;
+import com.xiongxh.baking_app.data.bean.Step;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.CompositeDisposable;
@@ -17,9 +18,9 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
     private CompositeDisposable mDisposableRecipe = new CompositeDisposable();
     private int mRecipeId;
 
-    public RecipeDetailPresenter(RecipeDetailContract.View view, int recipeId){
-        this.mRecipeView = view;
-        this.mRecipeId = recipeId;
+    public RecipeDetailPresenter(){
+        //this.mRecipeView = view;
+        //this.mRecipeId = recipeId;
         mRecipeInteractor = new RecipeInteractor();
     }
 
@@ -73,7 +74,11 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
                 .subscribeWith(new DisposableSingleObserver<Recipe>(){
                     @Override
                     public void onSuccess(@NonNull Recipe recipe){
-                        mRecipeView.refreshStepContainer(stepId);
+                        Step step = recipe.getSteps().get(stepId);
+                        mRecipeView.refreshStepContainer(
+                                step.getDescription(),
+                                step.getVideoURL(),
+                                step.getThumbnailURL());
                     }
 
                     @Override
@@ -89,6 +94,11 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
     @Override
     public void openStepDetails(int stepId) {
         mRecipeView.showStepDetails(stepId);
+    }
+
+    @Override
+    public void setRecipeId(int recipeId){
+        this.mRecipeId = recipeId;
     }
 
 }
