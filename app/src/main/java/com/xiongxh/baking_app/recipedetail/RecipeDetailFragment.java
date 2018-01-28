@@ -41,7 +41,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
     private RecipeDetailAdapter mRecipeDetailAdapter;
     private LinearLayoutManager mLayoutManager;
-    //private int currentVisiblePosition;
     private Unbinder unbinder;
 
     @BindView(R.id.rv_steps_recipe)
@@ -88,10 +87,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mStepsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                         DividerItemDecoration.VERTICAL));
 
-        if (UiUtils.isTablet()){
-            mRecipeDetailPresenter.fetchStepData(mStepId);
-        }
-
         return rootView;
     }
 
@@ -104,36 +99,12 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     @Override
     public void onActivityCreated(@NonNull Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        //mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
         mRecipeDetailPresenter.subscribe(this);
 
         if (UiUtils.isTablet()){
             mRecipeDetailPresenter.fetchStepData(mStepId);
         }
     }
-
-
-//    @Override
-//    public void onResume(){
-//        super.onResume();
-//        mRecipeDetailPresenter.subscribe(this);
-//        /*
-//        currentVisiblePosition = ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
-//                .findFirstCompletelyVisibleItemPosition();
-//        currentVisiblePosition = 0;
-//        */
-//    }
-
-//    @Override
-//    public void onPause(){
-//        super.onPause();
-//        /*
-//        ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
-//                .scrollToPosition(currentVisiblePosition);
-//                */
-//        mRecipeDetailPresenter.unsubscribe();
-//
-//    }
 
     @Override
     public void onDestroyView(){
@@ -161,7 +132,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         }
     }
 
-
     @Override
     public void showSteps(List<Step> stepList) {
         mRecipeDetailAdapter.refreshSteps(stepList);
@@ -178,19 +148,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
             startActivity(RecipeStepsActivity.prepareIntent(getContext(), mRecipeId, stepId));
         }
     }
-
-    /*
-    @Override
-    public void refreshStepContainer(int stepId) {
-        mStepId = stepId;
-        RecipeStepsFragment mRecipeStepsFragment = RecipeStepsFragment.newInstance(stepId);
-
-        getChildFragmentManager()
-                .beginTransaction()
-                .replace(R.id.step_recipe_container, mRecipeStepsFragment)
-                .commit();
-    }
-*/
 
     @Override
     public void showErrorMessage(String message) {

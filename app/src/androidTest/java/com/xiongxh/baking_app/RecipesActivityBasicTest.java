@@ -52,7 +52,7 @@ public class RecipesActivityBasicTest {
         onView(ViewMatchers.withId(R.id.rv_steps_recipe))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
 
-        onView(ViewMatchers.withId(R.id.vp_step_recipe)).check(matches(isDisplayed()));
+        onView(ViewMatchers.withId(R.id.recipe_step_tablayout)).check(matches(isDisplayed()));
     }
 
     @After

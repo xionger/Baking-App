@@ -35,19 +35,6 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
     private Unbinder unbinder;
 
     private int mStepId;
-    /*
-    @BindView(R.id.vp_step_recipe)
-    SimpleExoPlayerView mPlayView;
-    @BindView(R.id.tv_step_recipe)
-    TextView mStepTextView;
-    @BindView(R.id.tv_step_number)
-    TextView mStepNumberTextView;
-
-    @BindView(R.id.btn_backward)
-    FloatingActionButton mBackButton;
-    @BindView(R.id.btn_forward)
-    FloatingActionButton mNextButton;
-    */
 
     @BindView(R.id.recipe_step_page)
     ViewPager mStepPagerView;
@@ -59,20 +46,10 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
 
     public RecipeStepsFragment() {
     }
-/*
-    public static RecipeStepsFragment newInstance(int recipeId, int stepId){
-        Bundle args = new Bundle();
-        RecipeStepsFragment fragment = new RecipeStepsFragment();
-        args.putInt(RECIPE_ID_KEY, recipeId);
-        args.putInt(STEP_ID_KEY, stepId);
-        fragment.setArguments(args);
-        return fragment;
-    }
-*/
+
     public static RecipeStepsFragment newInstance(int stepId){
         Bundle args = new Bundle();
         RecipeStepsFragment fragment = new RecipeStepsFragment();
-        //args.putInt(RECIPE_ID_KEY, recipeId);
         args.putInt(STEP_ID_KEY, stepId);
         fragment.setArguments(args);
         return fragment;
@@ -95,9 +72,6 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
         View rootView = inflater.inflate(R.layout.fragment_recipe_steps, container, false);
         unbinder = ButterKnife.bind(this, rootView);
 
-        //int recipeId = getArguments().getInt(RECIPE_ID_KEY);
-        //Timber.d("recipeId: " + recipeId);
-
         mStepPagerAdapter =
                 new StepPagerAdapter(getFragmentManager(),
                 new ArrayList<>(0),
@@ -112,11 +86,6 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
         if (orientation == Configuration.ORIENTATION_LANDSCAPE && !UiUtils.isTablet()){
             mStepTabLayout.setVisibility(View.GONE);
         }
-
-        //mRecipeStepsPresenter = new RecipeStepsPresenter(this, recipeId, mStepId);
-
-        //mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
-        //mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
 
         return rootView;
     }
@@ -188,104 +157,5 @@ public class RecipeStepsFragment extends Fragment implements RecipeStepsContract
             public void onPageScrollStateChanged(int state) {}
         });
     }
-    /*
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_recipe_steps, container, false);
-        unbinder = ButterKnife.bind(this, rootView);
 
-        int stepId;
-
-        if (null != savedInstanceState){
-            stepId = savedInstanceState.getInt(STEP_ID_KEY);
-            Timber.d("savedInstanceState is null, stepId: " + stepId);
-        }else {
-            stepId = getArguments().getInt(STEP_ID_KEY);
-            Timber.d("savedInstanceState is not null, stepId: " + stepId);
-        }
-
-        int recipeId = getArguments().getInt(RECIPE_ID_KEY);
-        Timber.d("recipeId: " + recipeId);
-
-        mRecipeStepsPresenter = new RecipeStepsPresenter(this, recipeId, stepId);
-
-        mBackButton.setOnClickListener(v -> mRecipeStepsPresenter.showPreviousStep());
-        mNextButton.setOnClickListener(v -> mRecipeStepsPresenter.showNextStep());
-
-        return rootView;
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState){
-        outState.putInt(STEP_ID_KEY, mRecipeStepsPresenter.getCurrentIndex());
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-        mRecipeStepsPresenter.subscribe(this);
-    }
-
-    @Override
-    public void onPause(){
-        super.onPause();
-        mRecipeStepsPresenter.unsubscribe();
-        if (null != mPlayView.getPlayer()) {
-            mPlayView.getPlayer().release();
-        }
-    }
-
-    @Override
-    public void onDestroyView(){
-        super.onDestroyView();
-        unbinder.unbind();
-    }
-
-    @Override
-    public void showStep(Step step, @NonNull SimpleExoPlayer player){
-        if (null != mPlayView.getPlayer()) {
-            Timber.d("mPlayerView is not null ...");
-            mPlayView.getPlayer().release();
-        } else{
-            Timber.d("mPlayerView is null ...");
-        }
-        mStepTextView.setText(step.getDescription());
-
-        if (null == player){
-            mPlayView.setVisibility(View.GONE);
-        }else{
-            mPlayView.setVisibility(View.VISIBLE);
-            mPlayView.setPlayer(player);
-        }
-    }
-
-    @Override
-    public void setStepNumber(String stepNumber){
-        mStepNumberTextView.setText(stepNumber);
-    }
-
-    @Override
-    public void setBackButton(boolean existed){
-        mBackButton.setVisibility(existed ? View.VISIBLE : View.INVISIBLE);
-    }
-
-    @Override
-    public void setNextButton(boolean existed) {
-        mNextButton.setVisibility(existed ? View.VISIBLE : View.INVISIBLE);
-    }
-
-    @Override
-    public void showRecipeName(String recipeName) {
-        if (!UiUtils.isTablet()) {
-            getActivity().setTitle(recipeName);
-        }
-    }
-
-    @Override
-    public void showErrorMessage(String message){
-        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-    }
-    */
 }

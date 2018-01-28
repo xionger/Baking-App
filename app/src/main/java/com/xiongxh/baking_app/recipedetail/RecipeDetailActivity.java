@@ -34,16 +34,6 @@ public class RecipeDetailActivity extends AppCompatActivity {
                     .beginTransaction()
                     .replace(R.id.detail_recipe_container, mRecipeDetailFragment, TAG_RECIPE_FRAGMENT)
                     .commit();
-//            if (UiUtils.isTablet()) {
-//                mStepsFragment = RecipeStepsFragment.newInstance(0);
-//            }
-//
-//            if (mStepsFragment != null){
-//                getSupportFragmentManager()
-//                        .beginTransaction()
-//                        .replace(R.id.step_recipe_container, mStepsFragment, TAG_STEP_FRAGMENT)
-//                        .commit();
-//            }
         }
 
         if (mRecipeDetailFragment == null){

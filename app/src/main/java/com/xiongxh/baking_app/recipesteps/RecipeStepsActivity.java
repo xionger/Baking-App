@@ -12,7 +12,6 @@ public class RecipeStepsActivity extends AppCompatActivity {
     private static final String RECIPE_ID_KEY = "RECIPIE_ID";
     private static final String STEP_ID_KEY = "STEP_ID";
 
-    private static final String FRAGMENT_RECIPEDETAIL = "FRAGMENT_RECIPEDETAIL";
     private static final String FRAGMENT_STEPS = "FRAGMENT_STEPS";
 
     int mRecipeId;
@@ -35,7 +34,6 @@ public class RecipeStepsActivity extends AppCompatActivity {
 
         if (savedInstanceState == null){
             int stepId = getIntent().getIntExtra(STEP_ID_KEY, -1);
-            //mRecipeStepsFragment = RecipeStepsFragment.newInstance(mRecipeId, stepId);
             mRecipeStepsFragment = RecipeStepsFragment.newInstance(stepId);
 
             getSupportFragmentManager()

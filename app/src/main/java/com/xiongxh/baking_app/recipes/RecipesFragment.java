@@ -1,7 +1,9 @@
 package com.xiongxh.baking_app.recipes;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,13 +24,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import timber.log.Timber;
 
 public class RecipesFragment extends Fragment implements RecipesContract.View{
-
-    private static final String LOG_TAG = RecipesFragment.class.getSimpleName();
-
-    private static final String SAVED_SCROLL_POSITION = "SAVED_SCROLL_POSITION";
 
     @BindView(R.id.rv_list_recipe)
     RecyclerView mRecipesRecyclerView;
@@ -58,12 +55,6 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
-//        if (savedInstanceState != null && savedInstanceState.containsKey(SAVED_SCROLL_POSITION)){
-//            int position = savedInstanceState.getInt(SAVED_SCROLL_POSITION);
-//            new Handler()
-//                    .postDelayed(() -> mLayoutManager
-//                            .scrollToPositionWithOffset(position, 0), 200);
-//        }
         super.onActivityCreated(savedInstanceState);
 
         mRecipesAdapter = new RecipesAdapter(
@@ -75,14 +66,6 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         mRecipesRecyclerView.setAdapter(mRecipesAdapter);
 
     }
-
-//    @Override
-//    public void onSaveInstanceState(Bundle outState){
-//
-//        int position = mLayoutManager.findLastVisibleItemPosition();
-//        outState.putInt(SAVED_SCROLL_POSITION, position);
-//        super.onSaveInstanceState(outState);
-//    }
 
     @Override
     public void onResume(){
@@ -100,7 +83,6 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
     @Override
     public void onPause(){
         super.onPause();
-        //mRecipesPresenter.unsubscribe();
     }
 
     @Override
@@ -136,7 +118,18 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
 
     @Override
     public void showLoadingRecipesCompletedMessage() {
-        Toast.makeText(getContext(), "Loading completed!", Toast.LENGTH_SHORT).show();
+        final Snackbar snackbar = Snackbar
+                .make(mRecipesRecyclerView, "Load Finished", Snackbar.LENGTH_LONG);
+
+        snackbar.setActionTextColor(Color.MAGENTA)
+                .setAction("Refresh", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        refresh();
+                    }
+                });
+
+        snackbar.show();
     }
 
     @Override
@@ -147,5 +140,9 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
     @Override
     public void setPresenter(RecipesContract.Presenter presenter){
         this.mRecipesPresenter = presenter;
+    }
+
+    public void refresh(){
+        mRecipesPresenter.syncData();
     }
 }

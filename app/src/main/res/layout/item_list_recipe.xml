@@ -6,7 +6,7 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/space_large"
     android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="8dp"
     card_view:cardElevation="12dp">
@@ -30,7 +30,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:gravity="center_horizontal"
-            android:padding="8dp"
+            android:padding="@dimen/space_large"
             android:textSize="@dimen/item_title_text_size"
             tools:text="recipe title" />
 
@@ -41,16 +41,16 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="@dimen/space_medium">
 
             <TextView
                 android:id="@+id/tv_count_servings"
                 style="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingEnd="8dp"
-                android:paddingRight="8dp"
-                android:paddingStart="8dp"
+                android:paddingEnd="@dimen/space_large"
+                android:paddingRight="@dimen/space_large"
+                android:paddingStart="@dimen/space_large"
                 tools:text="16" />
 
             <TextView
@@ -58,9 +58,9 @@
                 style="@style/Base.TextAppearance.AppCompat.Medium.Inverse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingEnd="8dp"
-                android:paddingRight="8dp"
-                android:paddingStart="8dp"
+                android:paddingEnd="@dimen/space_large"
+                android:paddingRight="@dimen/space_large"
+                android:paddingStart="@dimen/space_large"
                 tools:text="16" />
         </LinearLayout>
 

@@ -25,7 +25,6 @@ public class RecipesPresenter implements RecipesContract.Presenter{
 
     public RecipesPresenter(){
         mRecipesInteractor = new RecipesInteractor();
-        //mRecipesView = view;
     }
 
     @Override

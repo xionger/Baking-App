@@ -11,7 +11,6 @@ import io.reactivex.observers.DisposableSingleObserver;
 import timber.log.Timber;
 
 public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
-    private static final String LOG_TAG = RecipeDetailPresenter.class.getSimpleName();
 
     private RecipeDetailContract.View mRecipeView;
     private RecipeInteractor mRecipeInteractor;
@@ -19,8 +18,6 @@ public class RecipeDetailPresenter implements RecipeDetailContract.Presenter{
     private int mRecipeId;
 
     public RecipeDetailPresenter(){
-        //this.mRecipeView = view;
-        //this.mRecipeId = recipeId;
         mRecipeInteractor = new RecipeInteractor();
     }
 
