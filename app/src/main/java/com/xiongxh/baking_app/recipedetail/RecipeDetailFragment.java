@@ -64,10 +64,6 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     public void onCreate(@NonNull Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mRecipeId = getArguments().getInt(RecipeDetailActivity.RECIPE_ID_KEY);
-
-        if (UiUtils.isTablet()){
-            mRecipeDetailPresenter.fetchStepData(mStepId);
-        }
     }
 
     @Override
@@ -87,6 +83,10 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
         mStepsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
                         DividerItemDecoration.VERTICAL));
+
+        if (UiUtils.isTablet()){
+            mRecipeDetailPresenter.fetchStepData(mStepId);
+        }
 
         return rootView;
     }
