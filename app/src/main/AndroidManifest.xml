@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".recipedetail.RecipeDetailActivity" />
+        <activity android:name=".recipedetail.RecipeDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity android:name=".recipesteps.RecipeStepsActivity" />
 
         <receiver android:name=".widget.BakingIngredientWidget">

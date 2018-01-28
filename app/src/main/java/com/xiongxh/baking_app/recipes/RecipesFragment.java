@@ -53,19 +53,8 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         View rootView = inflater.inflate(R.layout.fragment_list_recipe, container, false);
         unbinder = ButterKnife.bind(this, rootView);
 
-//        mRecipesAdapter = new RecipesAdapter(
-//                recipe -> RecipeDetailActivity.onStartActivity(getContext(), recipe.getId()));
-//
-//        mLayoutManager = new GridLayoutManager(getContext(), UiUtils.getCoulumnNumber());
-//        mRecipesRecyclerView.setLayoutManager(mLayoutManager);
-//
-//        mRecipesRecyclerView.setAdapter(mRecipesAdapter);
-
-        //mRecipesPresenter = new RecipesPresenter(this);
-
         return rootView;
     }
-
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){

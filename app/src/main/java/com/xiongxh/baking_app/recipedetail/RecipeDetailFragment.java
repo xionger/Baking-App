@@ -34,9 +34,10 @@ import timber.log.Timber;
 
 public class RecipeDetailFragment extends Fragment implements RecipeDetailContract.View{
 
+    private static final String CURRENT_STEP_KEY = "CURRENT_STEP_KEY";
 
     private int mRecipeId;
-    private int mStepId = 0;
+    private int mStepId;
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
     private RecipeDetailAdapter mRecipeDetailAdapter;
     private LinearLayoutManager mLayoutManager;
@@ -64,6 +65,9 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     public void onCreate(@NonNull Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         mRecipeId = getArguments().getInt(RecipeDetailActivity.RECIPE_ID_KEY);
+        if (savedInstanceState != null) {
+            mStepId = savedInstanceState.getInt(CURRENT_STEP_KEY);
+        }
     }
 
     @Override
@@ -89,6 +93,12 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         }
 
         return rootView;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outstate){
+        super.onSaveInstanceState(outstate);
+        outstate.putInt(CURRENT_STEP_KEY, mStepId);
     }
 
     /*
