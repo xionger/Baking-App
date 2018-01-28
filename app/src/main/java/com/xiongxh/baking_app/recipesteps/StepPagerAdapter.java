@@ -18,11 +18,13 @@ public class StepPagerAdapter extends FragmentPagerAdapter{
     private List<Step> mSteps;
     private final String mStepLabel;
 
+
     StepPagerAdapter(FragmentManager fragmentManager, List<Step> steps, Context context){
         super(fragmentManager);
         setSteps(steps);
         mStepLabel = context.getResources().getString(R.string.recipe_step_label);
     }
+
     @Override
     public Fragment getItem(int position) {
         Timber.d("StepPageFragment position: " + position);

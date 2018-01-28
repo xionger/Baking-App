@@ -60,7 +60,7 @@ public class StepPageFragment extends Fragment{
     @BindView(R.id.pv_recipe_step)
     SimpleExoPlayerView mExoPlayerView;
 
-    //SimpleExoPlayer exoPlayer;
+    SimpleExoPlayer exoPlayer;
     private MediaSessionCompat mediaSession;
     private PlaybackStateCompat.Builder stateBuilder;
 
@@ -100,48 +100,54 @@ public class StepPageFragment extends Fragment{
 
         startPage(videoUrl, imageUrl, description);
 
-        /*
-        //setViewVisibility(mDescriptionCardView, true);
+//        //setViewVisibility(mDescriptionCardView, true);
+//
+//        int orientation = getResources().getConfiguration().orientation;
+//
+//        String description = getArguments().getString(DESCRIPTION_KEY);
+//        Timber.d(DESCRIPTION_KEY + "=======================================:" + description);
+//        mDescriptionTextView.setText(description);
+//
+//        String imgUrl = getArguments().getString(IMAGE_URL_KEY);
+//        if (imgUrl != null && !imgUrl.isEmpty()){
+//            Glide.get(getContext()).clearDiskCache();
+//            Glide.with(this)
+//                    .load(imgUrl)
+//                    .into(mStepThumbnailImageView);
+//
+//            setViewVisibility(mStepThumbnailImageView, true);
+//        }else{
+//            setViewVisibility(mStepThumbnailImageView, false);
+//        }
+//
+//        String videoUrl = getArguments().getString(VIDEO_URL_KEY);
+//        Timber.d(VIDEO_URL_KEY + "++++++++++++++++++++++++++++++" + videoUrl);
+//
+//        if (videoUrl != null && !videoUrl.isEmpty()){
+//            Timber.d("show exoplayer ...");
+//            setViewVisibility(mExoPlayerView, true);
+//            //initializeMediaSession();
+//            //initializePlayer(Uri.parse(videoUrl));
+//            startPlayer(videoUrl);
+//
+////            if (null != mExoPlayerView.getPlayer()) {
+////                Timber.d("mExoPlayerView is not null ...");
+////                mExoPlayerView.getPlayer().release();
+////            } else{
+////                Timber.d("mExoPlayerView is null ...");
+////            }
+//            if (orientation == Configuration.ORIENTATION_LANDSCAPE && !UiUtils.isTablet()) {
+//                // Expand video, hide description, hide system UI
+//                expandVideoView(mExoPlayerView);
+//                setViewVisibility(mDescriptionCardView, false);
+//                hideSystemUI();
+//            }
+//
+//        }else{
+//            Timber.d("hide exoplayer ...");
+//            setViewVisibility(mExoPlayerView, false);
+//        }
 
-        String description = getArguments().getString(DESCRIPTION_KEY);
-        Timber.d(DESCRIPTION_KEY + "=======================================:" + description);
-        mDescriptionTextView.setText(description);
-
-        String imgUrl = getArguments().getString(IMAGE_URL_KEY);
-        if (imgUrl != null && !imgUrl.isEmpty()){
-            Glide.get(getContext()).clearDiskCache();
-            Glide.with(this)
-                    .load(imgUrl)
-                    .into(mStepThumbnailImageView);
-
-            setViewVisibility(mStepThumbnailImageView, true);
-        }else{
-            setViewVisibility(mStepThumbnailImageView, false);
-        }
-
-        String videoUrl = getArguments().getString(VIDEO_URL_KEY);
-        Timber.d(VIDEO_URL_KEY + "++++++++++++++++++++++++++++++" + videoUrl);
-
-        if (videoUrl != null && !videoUrl.isEmpty()){
-            Timber.d("show exoplayer ...");
-            //setViewVisibility(mExoPlayerView, true);
-            //initializeMediaSession();
-            //startPlayer(videoUrl);
-
-            if (null != mExoPlayerView.getPlayer()) {
-                Timber.d("mExoPlayerView is not null ...");
-                mExoPlayerView.getPlayer().release();
-            } else{
-                Timber.d("mExoPlayerView is null ...");
-            }
-
-
-            }
-        }else{
-            Timber.d("hide exoplayer ...");
-            setViewVisibility(mExoPlayerView, false);
-        }
-        */
     }
 
     @Override
@@ -153,10 +159,10 @@ public class StepPageFragment extends Fragment{
         }
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-    }
+//    @Override
+//    public void onResume(){
+//        super.onResume();
+//    }
 
     @Override
     public void onDestroyView(){
@@ -226,17 +232,17 @@ public class StepPageFragment extends Fragment{
             mExoPlayerView.setVisibility(View.VISIBLE);
             mExoPlayerView.setPlayer(player);
 
-//            int orientation = getResources().getConfiguration().orientation;
-//            if (orientation == Configuration.ORIENTATION_LANDSCAPE && !UiUtils.isTablet()) {
-//                // Expand video, hide description, hide system UI
-//                expandVideoView(mExoPlayerView);
-//                setViewVisibility(mDescriptionCardView, false);
-//                hideSystemUI();
-//            }
+            int orientation = getResources().getConfiguration().orientation;
+            if (orientation == Configuration.ORIENTATION_LANDSCAPE && !UiUtils.isTablet()) {
+                // Expand video, hide description, hide system UI
+                expandVideoView(mExoPlayerView);
+                setViewVisibility(mDescriptionCardView, false);
+                hideSystemUI();
+            }
         }
     }
+/*
 
-    /*
     @Override
     public void onTimelineChanged(Timeline timeline, Object manifest) {
 
@@ -345,15 +351,8 @@ public class StepPageFragment extends Fragment{
             exoPlayer.setPlayWhenReady(true);
         }
     }
-*/
-    private void setViewVisibility(View view, boolean isShown){
-        if (isShown){
-            view.setVisibility(View.VISIBLE);
-        }else{
-            view.setVisibility(View.INVISIBLE);
-        }
-    }
-    /*
+
+
     private void releasePlayer() {
         if (exoPlayer != null) {
             exoPlayer.stop();
@@ -366,6 +365,15 @@ public class StepPageFragment extends Fragment{
         }
     }
 */
+
+    private void setViewVisibility(View view, boolean isShown){
+        if (isShown){
+            view.setVisibility(View.VISIBLE);
+        }else{
+            view.setVisibility(View.INVISIBLE);
+        }
+    }
+
     private void expandVideoView(SimpleExoPlayerView exoPlayer) {
         exoPlayer.getLayoutParams().height = LayoutParams.MATCH_PARENT;
         exoPlayer.getLayoutParams().width = LayoutParams.MATCH_PARENT;

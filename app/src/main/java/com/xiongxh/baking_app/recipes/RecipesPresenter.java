@@ -42,6 +42,7 @@ public class RecipesPresenter implements RecipesContract.Presenter{
     @Override
     public void unsubscribe() {
         mDisposableRecipes.clear();
+
     }
 
     @Override

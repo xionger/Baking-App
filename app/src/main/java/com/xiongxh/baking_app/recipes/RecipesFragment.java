@@ -53,14 +53,13 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
         View rootView = inflater.inflate(R.layout.fragment_list_recipe, container, false);
         unbinder = ButterKnife.bind(this, rootView);
 
-
-        mRecipesAdapter = new RecipesAdapter(
-                recipe -> RecipeDetailActivity.onStartActivity(getContext(), recipe.getId()));
-
-        mLayoutManager = new GridLayoutManager(getContext(), UiUtils.getCoulumnNumber());
-        mRecipesRecyclerView.setLayoutManager(mLayoutManager);
-
-        mRecipesRecyclerView.setAdapter(mRecipesAdapter);
+//        mRecipesAdapter = new RecipesAdapter(
+//                recipe -> RecipeDetailActivity.onStartActivity(getContext(), recipe.getId()));
+//
+//        mLayoutManager = new GridLayoutManager(getContext(), UiUtils.getCoulumnNumber());
+//        mRecipesRecyclerView.setLayoutManager(mLayoutManager);
+//
+//        mRecipesRecyclerView.setAdapter(mRecipesAdapter);
 
         //mRecipesPresenter = new RecipesPresenter(this);
 
@@ -70,22 +69,31 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState){
-        if (savedInstanceState != null && savedInstanceState.containsKey(SAVED_SCROLL_POSITION)){
-            int position = savedInstanceState.getInt(SAVED_SCROLL_POSITION);
-            new Handler()
-                    .postDelayed(() -> mLayoutManager
-                            .scrollToPositionWithOffset(position, 0), 200);
-        }
+//        if (savedInstanceState != null && savedInstanceState.containsKey(SAVED_SCROLL_POSITION)){
+//            int position = savedInstanceState.getInt(SAVED_SCROLL_POSITION);
+//            new Handler()
+//                    .postDelayed(() -> mLayoutManager
+//                            .scrollToPositionWithOffset(position, 0), 200);
+//        }
         super.onActivityCreated(savedInstanceState);
+
+        mRecipesAdapter = new RecipesAdapter(
+                recipe -> RecipeDetailActivity.onStartActivity(getContext(), recipe.getId()));
+
+        mLayoutManager = new GridLayoutManager(getContext(), UiUtils.getCoulumnNumber());
+        mRecipesRecyclerView.setLayoutManager(mLayoutManager);
+
+        mRecipesRecyclerView.setAdapter(mRecipesAdapter);
+
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outState){
-
-        int position = mLayoutManager.findLastVisibleItemPosition();
-        outState.putInt(SAVED_SCROLL_POSITION, position);
-        super.onSaveInstanceState(outState);
-    }
+//    @Override
+//    public void onSaveInstanceState(Bundle outState){
+//
+//        int position = mLayoutManager.findLastVisibleItemPosition();
+//        outState.putInt(SAVED_SCROLL_POSITION, position);
+//        super.onSaveInstanceState(outState);
+//    }
 
     @Override
     public void onResume(){
@@ -94,9 +102,16 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
     }
 
     @Override
+    public void onDestroyView(){
+        super.onDestroyView();
+        mRecipesPresenter.unsubscribe();
+        unbinder.unbind();
+    }
+
+    @Override
     public void onPause(){
         super.onPause();
-        mRecipesPresenter.unsubscribe();
+        //mRecipesPresenter.unsubscribe();
     }
 
     @Override
@@ -133,13 +148,6 @@ public class RecipesFragment extends Fragment implements RecipesContract.View{
     @Override
     public void showLoadingRecipesCompletedMessage() {
         Toast.makeText(getContext(), "Loading completed!", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDestroyView(){
-        super.onDestroyView();
-        mRecipesPresenter.unsubscribe();
-        unbinder.unbind();
     }
 
     @Override

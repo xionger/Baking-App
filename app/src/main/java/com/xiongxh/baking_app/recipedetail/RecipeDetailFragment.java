@@ -40,7 +40,7 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     private RecipeDetailContract.Presenter mRecipeDetailPresenter;
     private RecipeDetailAdapter mRecipeDetailAdapter;
     private LinearLayoutManager mLayoutManager;
-    private int currentVisiblePosition;
+    //private int currentVisiblePosition;
     private Unbinder unbinder;
 
     @BindView(R.id.rv_steps_recipe)
@@ -121,8 +121,9 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         /*
         ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
                 .scrollToPosition(currentVisiblePosition);
+                */
         mRecipeDetailPresenter.unsubscribe();
-        */
+
     }
 
     @Override

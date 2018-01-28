@@ -33,12 +33,20 @@ public class RecipesActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+        if (savedInstanceState == null) {
+
             mRecipesFragment = RecipesFragment.newInstance();
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.recipes_fragment_container, (Fragment)mRecipesFragment, TAG_FRAGMENT_RECIPES)
+                    .replace(R.id.recipes_fragment_container, (Fragment) mRecipesFragment, TAG_FRAGMENT_RECIPES)
                     .commit();
+        }
+
+        if (mRecipesFragment == null){
+            mRecipesFragment =
+                    (RecipesContract.View) getSupportFragmentManager().findFragmentByTag(TAG_FRAGMENT_RECIPES);
+        }
 
         RecipesContract.Presenter presenter = BakingApp.get().presenterProvider.provideRecipes();
 

@@ -11,8 +11,9 @@ import com.xiongxh.baking_app.R;
 public class RecipeDetailActivity extends AppCompatActivity {
 
     public static final String RECIPE_ID_KEY = "RECIPIE_ID_KEY";
+    public static final String TAG_RECIPE_FRAGMENT = "TAG_RECIPE_FRAGMENT";
 
-    RecipeDetailFragment mRecipeDetailFragment = null;
+    RecipeDetailFragment mRecipeDetailFragment;
     int mRecipeId;
 
     @Override
@@ -26,8 +27,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
             mRecipeDetailFragment = RecipeDetailFragment.newInstance(mRecipeId);
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.detail_recipe_container, mRecipeDetailFragment)
+                    .replace(R.id.detail_recipe_container, mRecipeDetailFragment, TAG_RECIPE_FRAGMENT)
                     .commit();
+        }
+
+        if (mRecipeDetailFragment == null){
+            mRecipeDetailFragment =
+                    (RecipeDetailFragment) getSupportFragmentManager().findFragmentByTag(TAG_RECIPE_FRAGMENT);
         }
 
         RecipeDetailContract.Presenter presenter = BakingApp.get().presenterProvider.provideRecipeDetails();
