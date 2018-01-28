@@ -101,40 +101,39 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         outstate.putInt(CURRENT_STEP_KEY, mStepId);
     }
 
-    /*
     @Override
     public void onActivityCreated(@NonNull Bundle savedInstanceState){
         super.onActivityCreated(savedInstanceState);
-        mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
-        //mRecipeDetailPresenter = new RecipeDetailPresenter(this, mRecipeId);
+        //mRecipeId = getArguments().getInt(RECIPE_ID_KEY);
+        mRecipeDetailPresenter.subscribe(this);
 
         if (UiUtils.isTablet()){
             mRecipeDetailPresenter.fetchStepData(mStepId);
         }
     }
-    */
 
-    @Override
-    public void onResume(){
-        super.onResume();
-        mRecipeDetailPresenter.subscribe(this);
-        /*
-        currentVisiblePosition = ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
-                .findFirstCompletelyVisibleItemPosition();
-        currentVisiblePosition = 0;
-        */
-    }
 
-    @Override
-    public void onPause(){
-        super.onPause();
-        /*
-        ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
-                .scrollToPosition(currentVisiblePosition);
-                */
-        mRecipeDetailPresenter.unsubscribe();
+//    @Override
+//    public void onResume(){
+//        super.onResume();
+//        mRecipeDetailPresenter.subscribe(this);
+//        /*
+//        currentVisiblePosition = ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
+//                .findFirstCompletelyVisibleItemPosition();
+//        currentVisiblePosition = 0;
+//        */
+//    }
 
-    }
+//    @Override
+//    public void onPause(){
+//        super.onPause();
+//        /*
+//        ((LinearLayoutManager)mStepsRecyclerView.getLayoutManager())
+//                .scrollToPosition(currentVisiblePosition);
+//                */
+//        mRecipeDetailPresenter.unsubscribe();
+//
+//    }
 
     @Override
     public void onDestroyView(){

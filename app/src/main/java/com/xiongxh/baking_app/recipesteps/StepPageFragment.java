@@ -216,7 +216,7 @@ public class StepPageFragment extends Fragment{
         mDescriptionTextView.setText(description);
 
         if (imageUrl != null && !imageUrl.isEmpty()) {
-            Glide.get(getContext()).clearDiskCache();
+            //Glide.get(getContext()).clearDiskCache();
             Glide.with(this)
                     .load(imageUrl)
                     .into(mStepThumbnailImageView);
