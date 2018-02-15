@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.xiongxh.baking_app.R;
 import com.xiongxh.baking_app.data.bean.Recipe;
 
@@ -82,7 +83,16 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
             mNameView.setText(recipe.getName());
             mServingsView.setText("Servings: " + String.valueOf(recipe.getServings()-1));
-            mImageView.setImageResource(R.drawable.baking_logo);
+
+            String imageUrl = recipe.getImage();
+            if (imageUrl != null && !imageUrl.isEmpty()){
+                Glide.with(itemView.getContext())
+                        .load(imageUrl)
+                        .into(mImageView);
+            }else {
+                mImageView.setImageResource(R.drawable.baking_logo);
+            }
+
             mStepsCountView.setText("Steps: " + String.valueOf(recipe.getSteps().size()-1));
         }
     }

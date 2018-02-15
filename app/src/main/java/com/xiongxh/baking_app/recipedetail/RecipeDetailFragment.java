@@ -2,8 +2,11 @@ package com.xiongxh.baking_app.recipedetail;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +39,7 @@ import timber.log.Timber;
 public class RecipeDetailFragment extends Fragment implements RecipeDetailContract.View{
 
     private static final String CURRENT_STEP_KEY = "CURRENT_STEP_KEY";
+    private static final String RECYCLER_KEY = "RECYCLER_KEY";
 
     private int mRecipeId;
     private int mStepId;
@@ -43,11 +48,18 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
     private LinearLayoutManager mLayoutManager;
     private Unbinder unbinder;
 
+    private Parcelable mStateBundle;
+
     @BindView(R.id.rv_steps_recipe)
     RecyclerView mStepsRecyclerView;
 
-    @BindView(R.id.layout_ingredients)
-    LinearLayout mIngredientsLayout;
+    @BindView(R.id.tv_ingredients_list)
+    TextView mIngredientList;
+
+    @BindView(R.id.toolbar_layout)
+    CollapsingToolbarLayout collapsingToolbarLayout;
+    @BindView(R.id.sc_recipe_steps)
+    NestedScrollView mDetailScrollView;
 
     public RecipeDetailFragment(){}
 
@@ -78,10 +90,14 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         mRecipeDetailAdapter = new RecipeDetailAdapter(new ArrayList<>(0),
                 stepId -> mRecipeDetailPresenter.openStepDetails(stepId));
 
-        mLayoutManager = new LinearLayoutManager(getContext());
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         mStepsRecyclerView.setLayoutManager(mLayoutManager);
-        mStepsRecyclerView.setHasFixedSize(true);
+
+        if (savedInstanceState != null){
+            mStateBundle = savedInstanceState.getParcelable(RECYCLER_KEY);
+        }
         mStepsRecyclerView.setAdapter(mRecipeDetailAdapter);
 
         mStepsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
@@ -90,19 +106,30 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         return rootView;
     }
 
-    @Override
-    public void onSaveInstanceState(Bundle outstate){
-        super.onSaveInstanceState(outstate);
-        outstate.putInt(CURRENT_STEP_KEY, mStepId);
-    }
 
     @Override
-    public void onActivityCreated(@NonNull Bundle savedInstanceState){
+    public void onActivityCreated(@NonNull Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mRecipeDetailPresenter.subscribe(this);
 
-        if (UiUtils.isTablet()){
+        if (UiUtils.isTablet()) {
             mRecipeDetailPresenter.fetchStepData(mStepId);
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(CURRENT_STEP_KEY, mStepId);
+        outState.putParcelable(RECYCLER_KEY, mLayoutManager.onSaveInstanceState());
+    }
+
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if (mStateBundle != null) {
+            mLayoutManager.onRestoreInstanceState(mStateBundle);
         }
     }
 
@@ -125,11 +152,16 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
 
     @Override
     public void showIngredients(List<Ingredient> ingredientList) {
-        mIngredientsLayout.removeAllViews();
-        for (Ingredient ingredient : ingredientList){
-            IngredientsView ingredientsView = new IngredientsView(getContext());
-            mIngredientsLayout.addView(ingredientsView.bind(ingredient));
+
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("\n");
+        for (Ingredient ingredient : ingredientList) {
+            stringBuffer.append("\u2022 " + ingredient.getQuantity() +
+                    " " + ingredient.getMeasure() +
+                    " " + ingredient.getIngredient() +  "\n");
         }
+
+        mIngredientList.setText(stringBuffer.toString());
     }
 
     @Override

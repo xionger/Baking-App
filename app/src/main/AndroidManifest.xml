@@ -20,8 +20,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".recipedetail.RecipeDetailActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"/>
-        <activity android:name=".recipesteps.RecipeStepsActivity" />
+            android:launchMode="singleTop"
+            android:parentActivityName=".recipes.RecipesActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".recipes.RecipesActivity"/>
+        </activity>
+
+        <activity android:name=".recipesteps.RecipeStepsActivity"
+            android:parentActivityName=".recipedetail.RecipeDetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".recipedetail.RecipeDetailActivity"/>
+        </activity>
 
         <receiver android:name=".widget.BakingIngredientWidget">
             <intent-filter>

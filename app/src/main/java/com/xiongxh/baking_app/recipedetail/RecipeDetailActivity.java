@@ -2,6 +2,7 @@ package com.xiongxh.baking_app.recipedetail;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -24,6 +25,13 @@ public class RecipeDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
+
+        ActionBar supportActionBar = getSupportActionBar();
+
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true);
+        }
+
 
         mRecipeId = getIntent().getIntExtra(RECIPE_ID_KEY, -1);
 
