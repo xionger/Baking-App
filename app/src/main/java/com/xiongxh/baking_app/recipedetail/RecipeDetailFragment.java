@@ -112,9 +112,9 @@ public class RecipeDetailFragment extends Fragment implements RecipeDetailContra
         super.onActivityCreated(savedInstanceState);
         mRecipeDetailPresenter.subscribe(this);
 
-        if (UiUtils.isTablet()) {
-            mRecipeDetailPresenter.fetchStepData(mStepId);
-        }
+//        if (UiUtils.isTablet()) {
+//            mRecipeDetailPresenter.fetchStepData(mStepId);
+//        }
     }
 
     @Override

@@ -117,11 +117,11 @@ public class RecipeDetailAdapter extends RecyclerView.Adapter<RecipeDetailAdapte
                 videoIcon.setVisibility(View.VISIBLE);
             }
 
-            if (currentPos == bindPosition && UiUtils.isTablet()) {
-                stepItemLayout.setBackgroundColor(currentItemBackground);
-            }else {
-                stepItemLayout.setBackgroundColor(normalItemBackground);
-            }
+//            if (currentPos == bindPosition && UiUtils.isTablet()) {
+//                stepItemLayout.setBackgroundColor(currentItemBackground);
+//            }else {
+//                stepItemLayout.setBackgroundColor(normalItemBackground);
+//            }
 
         }
 

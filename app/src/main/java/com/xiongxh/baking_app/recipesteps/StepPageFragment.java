@@ -298,8 +298,8 @@ public class StepPageFragment extends Fragment implements Player.EventListener{
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroyView() {
+        super.onDestroyView();
         releasePlayer();
         if (mediaSession != null) {
             mediaSession.setActive(false);
