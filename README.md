@@ -30,12 +30,10 @@ This App is created as a part of [Android Developer Nanodegree program](https://
 
 ## Screens
 
-<img src="../master/screenshots/screenshot_1.png" alt="alt text" width="300"> <img src="../master/screenshots/screenshot_2.png" alt="alt text" width="300"> <img src="../master/screenshots/screenshot_3.png" alt="alt text" width="300">
+<img src="../master/screenshots/screenshot_1.png" alt="alt text" width="250"> <img src="../master/screenshots/screenshot_2.png" alt="alt text" width="250"> <img src="../master/screenshots/screenshot_3.png" alt="alt text" width="250">
 
-<img src="../master/screenshots/screenshot_4.png" alt="alt text" width="600">
+<img src="../master/screenshots/screenshot_4.png" alt="alt text" width="500">
 
-<img src="../master/screenshots/screenshot_5.png" alt="alt text" width="600">
-
-<img src="../master/screenshots/screenshot_6.png" alt="alt text" width="800">
+<img src="../master/screenshots/screenshot_5.png" alt="alt text" width="500">
 
 <img src="../master/screenshots/screenshot_7.png" alt="alt text" width="800">
