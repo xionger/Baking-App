@@ -9,6 +9,7 @@ This App is created as a part of [Android Developer Nanodegree program](https://
 * Add a widget to the app.
 * Leverage a third-party library in the app.
 * Use Fragments to create a responsive design that works on phones and tablets.
+* MVP architecture.
 
 ## App Architecture
 
