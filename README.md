@@ -36,3 +36,10 @@ This App is created as a part of [Android Developer Nanodegree program](https://
 <img src="../master/screenshots/ss_4.png" alt="alt text" width="400"> <img src="../master/screenshots/ss_5.png" alt="alt text" width="400">
 
 <img src="../master/screenshots/ss_7.png" alt="alt text" width="800">
+
+## How To Install
+
+This project uses the Gradle build system. To build this project, use the "gradlew build" command or use "Import Project" in Android Studio.
+
+## License
+The content of this repository is licensed under [MIT LICENSE](LICENSE.MD).
